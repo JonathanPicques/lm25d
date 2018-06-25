@@ -5,96 +5,147 @@ enum HeroState {
 
 	walk,
 	walk_turn,
-	walk_wall,
 
+	jump,
 	fall,
-	fall_recovery,
-	jump
+	fall_to_stand,
 }
 enum HeroDirection {
 	left = -1,
-	none = 0,
 	right = 1
 }
 
-var jumps = 0
+const FLOOR_VECTOR = Vector3(0.0, 1.0, 0.0)
 
-var input = preload("Input.gd").new()
-var input_direction = HeroDirection.none
+var jumps = 0
 
 var state = HeroState.stand
 var state_prev = HeroState.stand
 
 var velocity = Vector3()
-var velocity_prev = Vector3()
+
+var input_jump = false
+var input_velocity = Vector3()
 
 var direction = HeroDirection.right
 
-var wall_time = 0
 var on_wall = false
-var floor_time = 0
 var on_floor = false
+var _wall_time = 0
+var _floor_time = 0
 
 onready var timer = $Timer
 onready var sprite = $Sprite3D
 onready var animation_player = $AnimationPlayer
 
-func integrate_jump():
-	on_floor = false
-	floor_time = 0
+# _process updates input.
+# @impure
+# @param(float) delta
+func _process(delta):
+	var up = 1 if Input.is_action_pressed("player_up") else 0
+	var down = 1 if Input.is_action_pressed("player_down") else 0
+	var left = 1 if Input.is_action_pressed("player_left") else 0
+	var right = 1 if Input.is_action_pressed("player_right") else 0
+	input_jump = Input.is_action_just_pressed("player_jump")
+	input_velocity = Vector3(right - left, input_velocity.y, down - up)
 
-func integrate_input(delta):
-	input.integrate_input(delta)
-	input_direction = get_input_direction()
-
-func integrate_velocity(delta):
-	velocity = move_and_slide(velocity, Vector3(0, 1, 0))
-	wall_time -= delta
-	floor_time -= delta
+# _process_velocity updates position after velocity is applied.
+# @impure
+# @param(float) delta
+func _process_velocity(delta):
+	velocity = move_and_slide(velocity, FLOOR_VECTOR, 0.0)
+	_wall_time -= delta
+	_floor_time -= delta
 	if is_on_wall():
-		wall_time = 0.1
+		_wall_time = 0.1
 	if is_on_floor():
-		floor_time = 0.1
-	on_wall = wall_time > 0
-	on_floor = floor_time > 0
+		_floor_time = 0.1
+	on_wall = _wall_time > 0
+	on_floor = _floor_time > 0
 
-func start_timer(seconds):
-	timer.set_wait_time(seconds)
+# _start_timer starts a timer for the given duration in seconds.
+# @impure
+# @param(float) duration
+func _start_timer(duration):
+	timer.wait_time = duration
 	timer.start()
 
-func change_direction(new_direction):
+# _change_direction changes the hero direction and flips the sprite accordingly.
+# @impure
+# @param(float) new_direction
+func _change_direction(new_direction):
 	direction = new_direction
 	sprite.scale.x = new_direction
 
-func get_input_direction():
-	var opposed = input.left and input.right or (not input.left and not input.right)
-	return HeroDirection.none if opposed else HeroDirection.left if input.left else HeroDirection.right
+# _change_animation changes the sprite animation.
+# @impure
+# @param(string) animation
+func _change_animation(animation):
+	animation_player.play(animation)
 
-func get_vector_direction(vector):
-	return int(sign(vector.x))
+# is_moving_x returns true if the given velocity has a non-zero x.
+# @pure
+# @param(Vector3) velocity
+# @returns(bool)
+func is_moving_x(velocity):
+	return velocity.x != 0
 
-func get_velocity_direction():
-	return get_vector_direction(velocity)
+# is_moving_z returns true if the given velocity has a non-zero z.
+# @pure
+# @param(Vector3) velocity
+# @returns(bool)
+func is_moving_z(velocity):
+	return velocity.z != 0
 
-func get_horizontal_acceleration(delta, velocity, direction, acceleration, maximum_speed):
-	match direction:
-		HeroDirection.left: return Vector3(max(velocity.x - acceleration * delta, -maximum_speed), velocity.y, velocity.z)
-		HeroDirection.right: return Vector3(min(velocity.x + acceleration * delta, maximum_speed), velocity.y, velocity.z)
-	return velocity
+# is_moving_direction returns true if the given velocity is moving in the given direction.
+# @pure
+# @param (float) direction
+# @param(Vector3) velocity
+# @returns(bool)
+func is_moving_direction(direction, velocity):
+	return int(sign(velocity.x)) == direction
 
-func get_horizontal_deceleration(delta, velocity, deceleration):
-	match get_vector_direction(velocity):
-		HeroDirection.left: return Vector3(min(velocity.x + deceleration * delta, 0), velocity.y, velocity.z)
-		HeroDirection.right: return Vector3(max(velocity.x - deceleration * delta, 0), velocity.y, velocity.z)
-	return velocity
+# get_movement returns the next velocity after given acceleration or deceleration is applied depending on the given direction.
+# @pure
+# @param(float) delta
+# @param(Vector3) velocity
+# @param(Vector3) direction
+# @param(Vector3) acceleration
+# @param(Vector3) maximum_speed
+# @returns(Vector3)
+func get_movement(delta, velocity, direction, acceleration, deceleration, maximum_speed, force = false):
+	return Vector3(
+		get_acceleration(delta, velocity.x, direction.x, acceleration.x, maximum_speed.x) if force or (velocity.x == 0 or sign(direction.x) == sign(velocity.x)) else get_deceleration(delta, velocity.x, deceleration.x),
+		velocity.y,
+		get_acceleration(delta, velocity.z, direction.z, acceleration.z, maximum_speed.z) if force or (velocity.z == 0 or sign(direction.z) == sign(velocity.z)) else get_deceleration(delta, velocity.z, deceleration.z)
+	)
 
-func get_vertical_acceleration(delta, velocity, acceleration, maximum_speed):
-	return Vector3(velocity.x, max(velocity.y + acceleration * delta, maximum_speed), velocity.z)
+# get_acceleration returns the next value after the given acceleration is applied, clamped to the given maximum_speed.
+# @pure
+# @param(float) delta
+# @param(float) velocity
+# @param(float) direction
+# @param(float) acceleration
+# @param(float) maximum_speed
+# @returns(float)
+func get_acceleration(delta, velocity, direction, acceleration, maximum_speed):
+	return min(abs(velocity) + delta * acceleration, maximum_speed) * sign(direction)
 
-func get_horizontal_input_movement(delta, velocity, direction, acceleration, deceleration, maximum_speed):
-	if input_direction == HeroDirection.none:
-		return get_horizontal_deceleration(delta, velocity, deceleration)
-	elif input_direction == direction:
-		return get_horizontal_acceleration(delta, velocity, input_direction, acceleration, maximum_speed)
-	else:
-		return get_horizontal_deceleration(delta, velocity, (acceleration + deceleration))
+# get_deceleration returns the next value after the given deceleration is applied, clamped to zero.
+# @pure
+# @param(float) delta
+# @param(float) velocity
+# @param(float) deceleration
+# @returns(Vector3)
+func get_deceleration(delta, velocity, deceleration):
+	return max(abs(velocity) - delta * deceleration, 0) * sign(velocity)
+
+# get_gravity_acceleration returns the next value after the gravity is applied, clamped to the given gravity_max_speed.
+# @pure
+# @param(Vector3) delta
+# @param(Vector3) velocity
+# @param(Vector3) gravity
+# @param(Vector3) gravity_max_speed
+# @returns(Vector3)
+func get_gravity_acceleration(delta, velocity, gravity, gravity_max_speed):
+	return Vector3(velocity.x, max(velocity.y + gravity.y * delta, gravity_max_speed.y), velocity.z)

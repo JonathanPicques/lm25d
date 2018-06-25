@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Objects/Heroes/Luigi/Luigi.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Decors/Skirting/Textures/Dirt.png" type="Texture" id=2]
@@ -25,7 +25,15 @@
 
 extents = Vector3( 15, 0.06, 1 )
 
-[sub_resource type="CubeMesh" id=2]
+[sub_resource type="BoxShape" id=2]
+
+extents = Vector3( 15, 2, 0.1 )
+
+[sub_resource type="BoxShape" id=3]
+
+extents = Vector3( 15, 2, 0.1 )
+
+[sub_resource type="CubeMesh" id=4]
 
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector3( 30, 3, 10 )
@@ -33,7 +41,7 @@ subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=5]
 
 render_priority = 0
 flags_transparent = false
@@ -86,7 +94,7 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "Roughness", "UV1" ]
 
-[sub_resource type="CubeMesh" id=4]
+[sub_resource type="CubeMesh" id=6]
 
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector3( 30, 3, 0.8 )
@@ -94,7 +102,7 @@ subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="SpatialMaterial" id=7]
 
 render_priority = 0
 flags_transparent = false
@@ -149,7 +157,7 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Flags", "NormalMap", "UV1" ]
 
-[sub_resource type="CubeMesh" id=6]
+[sub_resource type="CubeMesh" id=8]
 
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector3( 30, 0.1, 3 )
@@ -157,7 +165,7 @@ subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[sub_resource type="SpatialMaterial" id=7]
+[sub_resource type="SpatialMaterial" id=9]
 
 render_priority = 0
 flags_transparent = false
@@ -212,7 +220,7 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "NormalMap", "UV1" ]
 
-[sub_resource type="SpatialMaterial" id=8]
+[sub_resource type="SpatialMaterial" id=10]
 
 render_priority = 0
 flags_transparent = false
@@ -265,13 +273,13 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "UV1" ]
 
-[sub_resource type="QuadMesh" id=9]
+[sub_resource type="QuadMesh" id=11]
 
-material = SubResource( 8 )
+material = SubResource( 10 )
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector2( 30, 2 )
 
-[sub_resource type="CubeMesh" id=10]
+[sub_resource type="CubeMesh" id=12]
 
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector3( 30, 6, 0.1 )
@@ -279,7 +287,7 @@ subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[sub_resource type="SpatialMaterial" id=11]
+[sub_resource type="SpatialMaterial" id=13]
 
 render_priority = 0
 flags_transparent = false
@@ -332,7 +340,7 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Roughness", "UV1" ]
 
-[sub_resource type="CubeMesh" id=12]
+[sub_resource type="CubeMesh" id=14]
 
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector3( 30, 2, 0.1 )
@@ -340,7 +348,7 @@ subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[sub_resource type="SpatialMaterial" id=13]
+[sub_resource type="SpatialMaterial" id=15]
 
 render_priority = 0
 flags_transparent = false
@@ -395,7 +403,7 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "NormalMap", "UV1" ]
 
-[sub_resource type="CubeMesh" id=14]
+[sub_resource type="CubeMesh" id=16]
 
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector3( 30, 3, 2 )
@@ -403,7 +411,7 @@ subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[sub_resource type="SpatialMaterial" id=15]
+[sub_resource type="SpatialMaterial" id=17]
 
 render_priority = 0
 flags_transparent = false
@@ -458,7 +466,7 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "NormalMap", "UV1" ]
 
-[sub_resource type="CubeMesh" id=16]
+[sub_resource type="CubeMesh" id=18]
 
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector3( 30, 2, 0.1 )
@@ -466,7 +474,7 @@ subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[sub_resource type="SpatialMaterial" id=17]
+[sub_resource type="SpatialMaterial" id=19]
 
 render_priority = 0
 flags_transparent = false
@@ -527,6 +535,7 @@ _sections_unfolded = [ "Albedo", "NormalMap" ]
 
 [node name="Luigi" parent="Hero" index="0" instance=ExtResource( 1 )]
 
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.77329, 0 )
 axis_lock_linear_y = true
 collision/safe_margin = 0.01
@@ -556,8 +565,6 @@ enabled = true
 
 [node name="Level" type="Spatial" parent="." index="1"]
 
-editor/display_folded = true
-
 [node name="FloorStatic" type="StaticBody" parent="Level" index="0"]
 
 editor/display_folded = true
@@ -575,26 +582,47 @@ constant_angular_velocity = Vector3( 0, 0, 0 )
 shape = SubResource( 1 )
 disabled = false
 
-[node name="Ground" type="MeshInstance" parent="Level" index="1"]
+[node name="BackWallStatic" type="StaticBody" parent="Level" index="1"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.736732, -2.5 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Level/BackWallStatic" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.41074e-005, 1.31627, 1.4 )
+shape = SubResource( 2 )
+disabled = false
+
+[node name="FrontWallStatic" type="StaticBody" parent="Level" index="2"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.736732, -0.3 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Level/FrontWallStatic" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.41074e-005, 1.31627, 1.4 )
+shape = SubResource( 3 )
+disabled = false
+
+[node name="Ground" type="MeshInstance" parent="Level" index="3"]
 
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, -5.76275, 1.19209e-007 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 2 )
-skeleton = NodePath("..")
-material/0 = SubResource( 3 )
-_sections_unfolded = [ "Transform", "material" ]
-
-[node name="Underfloor" type="MeshInstance" parent="Level" index="2"]
-
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, -0.448714, 1.19209e-007 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -609,9 +637,9 @@ skeleton = NodePath("..")
 material/0 = SubResource( 5 )
 _sections_unfolded = [ "Transform", "material" ]
 
-[node name="Floor" type="MeshInstance" parent="Level" index="3"]
+[node name="Underfloor" type="MeshInstance" parent="Level" index="4"]
 
-editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, -0.448714, 1.19209e-007 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -624,6 +652,23 @@ lod_max_hysteresis = 0.0
 mesh = SubResource( 6 )
 skeleton = NodePath("..")
 material/0 = SubResource( 7 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Floor" type="MeshInstance" parent="Level" index="5"]
+
+editor/display_folded = true
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 8 )
+skeleton = NodePath("..")
+material/0 = SubResource( 9 )
 _sections_unfolded = [ "Transform", "material" ]
 
 [node name="TableBack" parent="Level/Floor" index="0" instance=ExtResource( 7 )]
@@ -711,6 +756,7 @@ transform = Transform( 0.999613, 0, 0.0278098, 0, 1, 0, -0.0278098, 0, 0.999613,
 
 [node name="TableFront" parent="Level/Floor" index="1" instance=ExtResource( 7 )]
 
+editor/display_folded = true
 transform = Transform( 0.997468, 0, 0.0711219, 0, 1, 0, -0.0711219, 0, 0.997468, 9.1686, 0.05, 0.716925 )
 
 [node name="Candelabra" parent="Level/Floor/TableFront" index="1" instance=ExtResource( 8 )]
@@ -756,7 +802,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 9 )
+mesh = SubResource( 11 )
 skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "Transform" ]
@@ -767,6 +813,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51513, 0.05, 1.07445 )
 
 [node name="RoundTable2" parent="Level/Floor" index="4" instance=ExtResource( 11 )]
 
+editor/display_folded = true
 transform = Transform( 0.882276, 0, -0.470732, 0, 1, 0, 0.470732, 0, 0.882276, 2.12594, 0.05, 0.816327 )
 
 [node name="Teaset" parent="Level/Floor/RoundTable2" index="1" instance=ExtResource( 9 )]
@@ -781,8 +828,9 @@ transform = Transform( -0.99537, -0.0961148, 0, 0.0961148, -0.99537, 0, 0, 0, 1,
 
 transform = Transform( -0.44876, -0.893652, 0, 0.893652, -0.44876, 0, 0, 0, 1, 1.25469, 0.490409, 0.980903 )
 
-[node name="Wall" type="MeshInstance" parent="Level" index="4"]
+[node name="Wall" type="MeshInstance" parent="Level" index="6"]
 
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.95, -1.4 )
 layers = 1
 material_override = null
@@ -793,9 +841,9 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 10 )
+mesh = SubResource( 12 )
 skeleton = NodePath("..")
-material/0 = SubResource( 11 )
+material/0 = SubResource( 13 )
 _sections_unfolded = [ "Geometry", "Transform", "material" ]
 
 [node name="FramedPortrait" parent="Level/Wall" index="0" instance=ExtResource( 13 )]
@@ -866,13 +914,14 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 12 )
+mesh = SubResource( 14 )
 skeleton = NodePath("..")
-material/0 = SubResource( 13 )
+material/0 = SubResource( 15 )
 _sections_unfolded = [ "Geometry", "Transform", "material" ]
 
-[node name="Ceiling" type="MeshInstance" parent="Level" index="5"]
+[node name="Ceiling" type="MeshInstance" parent="Level" index="7"]
 
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 5.05129, 1.19209e-007 )
 layers = 1
 material_override = null
@@ -883,9 +932,9 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 14 )
+mesh = SubResource( 16 )
 skeleton = NodePath("..")
-material/0 = SubResource( 15 )
+material/0 = SubResource( 17 )
 _sections_unfolded = [ "Transform", "material" ]
 
 [node name="Chandelier" parent="Level/Ceiling" index="0" instance=ExtResource( 16 )]
@@ -927,9 +976,9 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 16 )
+mesh = SubResource( 18 )
 skeleton = NodePath("..")
-material/0 = SubResource( 17 )
+material/0 = SubResource( 19 )
 _sections_unfolded = [ "Geometry", "Transform", "material" ]
 
 [node name="TelephoneTable" parent="." index="2" instance=ExtResource( 19 )]

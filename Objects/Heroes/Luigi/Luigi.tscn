@@ -8,7 +8,7 @@
 [ext_resource path="res://Objects/Heroes/Luigi/Anims/Stand.tres" type="Animation" id=6]
 [ext_resource path="res://Objects/Heroes/Luigi/Anims/Walk.tres" type="Animation" id=7]
 
-[sub_resource type="SpatialMaterial" id=2]
+[sub_resource type="SpatialMaterial" id=1]
 
 render_priority = 0
 flags_transparent = true
@@ -60,9 +60,9 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Flags", "Metallic", "Parameters", "Roughness", "Vertex Color" ]
 
-[sub_resource type="BoxShape" id=1]
+[sub_resource type="BoxShape" id=2]
 
-extents = Vector3( 0.339855, 0.74747, 0.3 )
+extents = Vector3( 0.339855, 0.74747, 0.0364697 )
 
 [node name="Luigi" type="KinematicBody" index="0"]
 
@@ -90,7 +90,7 @@ autostart = false
 [node name="Sprite3D" type="Sprite3D" parent="." index="1"]
 
 layers = 1
-material_override = SubResource( 2 )
+material_override = SubResource( 1 )
 cast_shadow = 1
 extra_cull_margin = 0.0
 use_in_baked_light = false
@@ -120,7 +120,7 @@ _sections_unfolded = [ "Flags", "Geometry", "Transform" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="2"]
 
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 disabled = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
