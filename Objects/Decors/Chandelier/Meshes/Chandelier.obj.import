@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Chandelier.obj-f7b996a6ed2b142b7adde094e88f12aa.mesh"
+
+[deps]
+
+files=[ "res://.import/Chandelier.obj-f7b996a6ed2b142b7adde094e88f12aa.mesh" ]
+
+source_file="res://Objects/Decors/Chandelier/Meshes/Chandelier.obj"
+dest_files=[ "res://.import/Chandelier.obj-f7b996a6ed2b142b7adde094e88f12aa.mesh", "res://.import/Chandelier.obj-f7b996a6ed2b142b7adde094e88f12aa.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Teaset.obj-889c374fa4802eefb7cbd19b21886af9.mesh"
+
+[deps]
+
+files=[ "res://.import/Teaset.obj-889c374fa4802eefb7cbd19b21886af9.mesh" ]
+
+source_file="res://Objects/Decors/Teaset/Meshes/Teaset.obj"
+dest_files=[ "res://.import/Teaset.obj-889c374fa4802eefb7cbd19b21886af9.mesh", "res://.import/Teaset.obj-889c374fa4802eefb7cbd19b21886af9.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

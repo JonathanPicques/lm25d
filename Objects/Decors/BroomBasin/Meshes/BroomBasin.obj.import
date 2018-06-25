@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/BroomBasin.obj-0a8c5deccd3e0cf6fe7c48001706716c.mesh"
+
+[deps]
+
+files=[ "res://.import/BroomBasin.obj-0a8c5deccd3e0cf6fe7c48001706716c.mesh" ]
+
+source_file="res://Objects/Decors/BroomBasin/Meshes/BroomBasin.obj"
+dest_files=[ "res://.import/BroomBasin.obj-0a8c5deccd3e0cf6fe7c48001706716c.mesh", "res://.import/BroomBasin.obj-0a8c5deccd3e0cf6fe7c48001706716c.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

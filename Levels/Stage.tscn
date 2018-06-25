@@ -1,0 +1,966 @@
+[gd_scene load_steps=38 format=2]
+
+[ext_resource path="res://Objects/Heroes/Luigi/Luigi.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/Decors/Skirting/Textures/Dirt.png" type="Texture" id=2]
+[ext_resource path="res://Objects/Decors/Skirting/Textures/BrickSkirting.png" type="Texture" id=3]
+[ext_resource path="res://Objects/Decors/Skirting/Textures/BrickSkirting_Normal.png" type="Texture" id=4]
+[ext_resource path="res://Objects/Decors/Floor/Textures/WoodBoard.png" type="Texture" id=5]
+[ext_resource path="res://Objects/Decors/Floor/Textures/WoodBoard_Normal.png" type="Texture" id=6]
+[ext_resource path="res://Objects/Decors/Table/Table.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objects/Decors/Candelabra/Candelabra.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/Decors/Teaset/Teaset.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Objects/Decors/Carpet/Textures/CarpetTile.png" type="Texture" id=10]
+[ext_resource path="res://Objects/Decors/RoundTable/RoundTable.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Objects/Decors/Wall/Textures/WallPaperGreenMotif.png" type="Texture" id=12]
+[ext_resource path="res://Objects/Decors/FramedPortrait/FramedPortrait.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Objects/Decors/Skirting/Textures/WoodSkirting.png" type="Texture" id=14]
+[ext_resource path="res://Objects/Decors/Skirting/Textures/WoodSkirting_Normal.png" type="Texture" id=15]
+[ext_resource path="res://Objects/Decors/Chandelier/Chandelier.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Objects/Decors/Skirting/Textures/WoodCeilingSkirting.png" type="Texture" id=17]
+[ext_resource path="res://Objects/Decors/Skirting/Textures/WoodCeilingSkirting_Normal.png" type="Texture" id=18]
+[ext_resource path="res://Objects/Decors/TelephoneTable/TelephoneTable.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Objects/Decors/BroomBasin/BroomBasin.tscn" type="PackedScene" id=20]
+
+[sub_resource type="BoxShape" id=1]
+
+extents = Vector3( 15, 0.06, 1 )
+
+[sub_resource type="CubeMesh" id=2]
+
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+size = Vector3( 30, 3, 10 )
+subdivide_width = 0
+subdivide_height = 0
+subdivide_depth = 0
+
+[sub_resource type="SpatialMaterial" id=3]
+
+render_priority = 0
+flags_transparent = false
+flags_unshaded = false
+flags_vertex_lighting = false
+flags_no_depth_test = false
+flags_use_point_size = false
+flags_world_triplanar = false
+flags_fixed_size = false
+flags_albedo_tex_force_srgb = false
+vertex_color_use_as_albedo = false
+vertex_color_is_srgb = false
+params_diffuse_mode = 0
+params_specular_mode = 0
+params_blend_mode = 0
+params_cull_mode = 0
+params_depth_draw_mode = 0
+params_line_width = 1.0
+params_point_size = 1.0
+params_billboard_mode = 0
+params_grow = false
+params_use_alpha_scissor = false
+albedo_color = Color( 1, 1, 1, 1 )
+albedo_texture = ExtResource( 2 )
+metallic = 0.0
+metallic_specular = 0.5
+metallic_texture_channel = 0
+roughness = 1.0
+roughness_texture_channel = 0
+emission_enabled = false
+normal_enabled = false
+rim_enabled = false
+clearcoat_enabled = false
+anisotropy_enabled = false
+ao_enabled = false
+depth_enabled = false
+subsurf_scatter_enabled = false
+transmission_enabled = false
+refraction_enabled = false
+detail_enabled = false
+uv1_scale = Vector3( 1, 1, 1 )
+uv1_offset = Vector3( 0, 0, 0 )
+uv1_triplanar = true
+uv1_triplanar_sharpness = 1.0
+uv2_scale = Vector3( 1, 1, 1 )
+uv2_offset = Vector3( 0, 0, 0 )
+uv2_triplanar = false
+uv2_triplanar_sharpness = 1.0
+proximity_fade_enable = false
+distance_fade_enable = false
+_sections_unfolded = [ "Albedo", "Roughness", "UV1" ]
+
+[sub_resource type="CubeMesh" id=4]
+
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+size = Vector3( 30, 3, 0.8 )
+subdivide_width = 0
+subdivide_height = 0
+subdivide_depth = 0
+
+[sub_resource type="SpatialMaterial" id=5]
+
+render_priority = 0
+flags_transparent = false
+flags_unshaded = false
+flags_vertex_lighting = false
+flags_no_depth_test = false
+flags_use_point_size = false
+flags_world_triplanar = true
+flags_fixed_size = false
+flags_albedo_tex_force_srgb = false
+vertex_color_use_as_albedo = false
+vertex_color_is_srgb = false
+params_diffuse_mode = 0
+params_specular_mode = 0
+params_blend_mode = 0
+params_cull_mode = 0
+params_depth_draw_mode = 0
+params_line_width = 1.0
+params_point_size = 1.0
+params_billboard_mode = 0
+params_grow = false
+params_use_alpha_scissor = false
+albedo_color = Color( 1, 1, 1, 1 )
+albedo_texture = ExtResource( 3 )
+metallic = 0.0
+metallic_specular = 0.5
+metallic_texture_channel = 0
+roughness = 0.0
+roughness_texture_channel = 0
+emission_enabled = false
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 4 )
+rim_enabled = false
+clearcoat_enabled = false
+anisotropy_enabled = false
+ao_enabled = false
+depth_enabled = false
+subsurf_scatter_enabled = false
+transmission_enabled = false
+refraction_enabled = false
+detail_enabled = false
+uv1_scale = Vector3( 1, 1, 1 )
+uv1_offset = Vector3( 0, 0, 0 )
+uv1_triplanar = true
+uv1_triplanar_sharpness = 1.0
+uv2_scale = Vector3( 1, 1, 1 )
+uv2_offset = Vector3( 0, 0, 0 )
+uv2_triplanar = false
+uv2_triplanar_sharpness = 1.0
+proximity_fade_enable = false
+distance_fade_enable = false
+_sections_unfolded = [ "Flags", "NormalMap", "UV1" ]
+
+[sub_resource type="CubeMesh" id=6]
+
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+size = Vector3( 30, 0.1, 3 )
+subdivide_width = 0
+subdivide_height = 0
+subdivide_depth = 0
+
+[sub_resource type="SpatialMaterial" id=7]
+
+render_priority = 0
+flags_transparent = false
+flags_unshaded = false
+flags_vertex_lighting = false
+flags_no_depth_test = false
+flags_use_point_size = false
+flags_world_triplanar = false
+flags_fixed_size = false
+flags_albedo_tex_force_srgb = false
+vertex_color_use_as_albedo = false
+vertex_color_is_srgb = false
+params_diffuse_mode = 0
+params_specular_mode = 0
+params_blend_mode = 0
+params_cull_mode = 0
+params_depth_draw_mode = 0
+params_line_width = 1.0
+params_point_size = 1.0
+params_billboard_mode = 0
+params_grow = false
+params_use_alpha_scissor = false
+albedo_color = Color( 1, 1, 1, 1 )
+albedo_texture = ExtResource( 5 )
+metallic = 0.0
+metallic_specular = 0.5
+metallic_texture_channel = 0
+roughness = 0.0
+roughness_texture_channel = 0
+emission_enabled = false
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 6 )
+rim_enabled = false
+clearcoat_enabled = false
+anisotropy_enabled = false
+ao_enabled = false
+depth_enabled = false
+subsurf_scatter_enabled = false
+transmission_enabled = false
+refraction_enabled = false
+detail_enabled = false
+uv1_scale = Vector3( 1, 1, 1 )
+uv1_offset = Vector3( 0, 0, 0 )
+uv1_triplanar = true
+uv1_triplanar_sharpness = 1.0
+uv2_scale = Vector3( 1, 1, 1 )
+uv2_offset = Vector3( 0, 0, 0 )
+uv2_triplanar = false
+uv2_triplanar_sharpness = 1.0
+proximity_fade_enable = false
+distance_fade_enable = false
+_sections_unfolded = [ "Albedo", "NormalMap", "UV1" ]
+
+[sub_resource type="SpatialMaterial" id=8]
+
+render_priority = 0
+flags_transparent = false
+flags_unshaded = false
+flags_vertex_lighting = false
+flags_no_depth_test = false
+flags_use_point_size = false
+flags_world_triplanar = false
+flags_fixed_size = false
+flags_albedo_tex_force_srgb = false
+vertex_color_use_as_albedo = false
+vertex_color_is_srgb = false
+params_diffuse_mode = 0
+params_specular_mode = 0
+params_blend_mode = 0
+params_cull_mode = 0
+params_depth_draw_mode = 0
+params_line_width = 1.0
+params_point_size = 1.0
+params_billboard_mode = 0
+params_grow = false
+params_use_alpha_scissor = false
+albedo_color = Color( 1, 1, 1, 1 )
+albedo_texture = ExtResource( 10 )
+metallic = 0.0
+metallic_specular = 0.5
+metallic_texture_channel = 0
+roughness = 0.8
+roughness_texture_channel = 0
+emission_enabled = false
+normal_enabled = false
+rim_enabled = false
+clearcoat_enabled = false
+anisotropy_enabled = false
+ao_enabled = false
+depth_enabled = false
+subsurf_scatter_enabled = false
+transmission_enabled = false
+refraction_enabled = false
+detail_enabled = false
+uv1_scale = Vector3( 1, 1, 1 )
+uv1_offset = Vector3( 0, 0, 0 )
+uv1_triplanar = true
+uv1_triplanar_sharpness = 1.0
+uv2_scale = Vector3( 1, 1, 1 )
+uv2_offset = Vector3( 0, 0, 0 )
+uv2_triplanar = false
+uv2_triplanar_sharpness = 1.0
+proximity_fade_enable = false
+distance_fade_enable = false
+_sections_unfolded = [ "UV1" ]
+
+[sub_resource type="QuadMesh" id=9]
+
+material = SubResource( 8 )
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+size = Vector2( 30, 2 )
+
+[sub_resource type="CubeMesh" id=10]
+
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+size = Vector3( 30, 6, 0.1 )
+subdivide_width = 0
+subdivide_height = 0
+subdivide_depth = 0
+
+[sub_resource type="SpatialMaterial" id=11]
+
+render_priority = 0
+flags_transparent = false
+flags_unshaded = false
+flags_vertex_lighting = false
+flags_no_depth_test = false
+flags_use_point_size = false
+flags_world_triplanar = false
+flags_fixed_size = false
+flags_albedo_tex_force_srgb = false
+vertex_color_use_as_albedo = false
+vertex_color_is_srgb = false
+params_diffuse_mode = 0
+params_specular_mode = 0
+params_blend_mode = 0
+params_cull_mode = 0
+params_depth_draw_mode = 0
+params_line_width = 1.0
+params_point_size = 1.0
+params_billboard_mode = 0
+params_grow = false
+params_use_alpha_scissor = false
+albedo_color = Color( 1, 1, 1, 1 )
+albedo_texture = ExtResource( 12 )
+metallic = 0.0
+metallic_specular = 0.5
+metallic_texture_channel = 0
+roughness = 1.0
+roughness_texture_channel = 0
+emission_enabled = false
+normal_enabled = false
+rim_enabled = false
+clearcoat_enabled = false
+anisotropy_enabled = false
+ao_enabled = false
+depth_enabled = false
+subsurf_scatter_enabled = false
+transmission_enabled = false
+refraction_enabled = false
+detail_enabled = false
+uv1_scale = Vector3( 1, 1, 1 )
+uv1_offset = Vector3( 0, 0, 0 )
+uv1_triplanar = true
+uv1_triplanar_sharpness = 1.0
+uv2_scale = Vector3( 1, 1, 1 )
+uv2_offset = Vector3( 0, 0, 0 )
+uv2_triplanar = false
+uv2_triplanar_sharpness = 1.0
+proximity_fade_enable = false
+distance_fade_enable = false
+_sections_unfolded = [ "Roughness", "UV1" ]
+
+[sub_resource type="CubeMesh" id=12]
+
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+size = Vector3( 30, 2, 0.1 )
+subdivide_width = 0
+subdivide_height = 0
+subdivide_depth = 0
+
+[sub_resource type="SpatialMaterial" id=13]
+
+render_priority = 0
+flags_transparent = false
+flags_unshaded = false
+flags_vertex_lighting = false
+flags_no_depth_test = false
+flags_use_point_size = false
+flags_world_triplanar = false
+flags_fixed_size = false
+flags_albedo_tex_force_srgb = false
+vertex_color_use_as_albedo = false
+vertex_color_is_srgb = false
+params_diffuse_mode = 0
+params_specular_mode = 0
+params_blend_mode = 0
+params_cull_mode = 0
+params_depth_draw_mode = 0
+params_line_width = 1.0
+params_point_size = 1.0
+params_billboard_mode = 0
+params_grow = false
+params_use_alpha_scissor = false
+albedo_color = Color( 1, 1, 1, 1 )
+albedo_texture = ExtResource( 14 )
+metallic = 0.0
+metallic_specular = 0.5
+metallic_texture_channel = 0
+roughness = 0.8
+roughness_texture_channel = 0
+emission_enabled = false
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 15 )
+rim_enabled = false
+clearcoat_enabled = false
+anisotropy_enabled = false
+ao_enabled = false
+depth_enabled = false
+subsurf_scatter_enabled = false
+transmission_enabled = false
+refraction_enabled = false
+detail_enabled = false
+uv1_scale = Vector3( 1, 1, 1 )
+uv1_offset = Vector3( 0, 0, 0 )
+uv1_triplanar = true
+uv1_triplanar_sharpness = 1.0
+uv2_scale = Vector3( 1, 1, 1 )
+uv2_offset = Vector3( 0, 0, 0 )
+uv2_triplanar = false
+uv2_triplanar_sharpness = 1.0
+proximity_fade_enable = false
+distance_fade_enable = false
+_sections_unfolded = [ "Albedo", "NormalMap", "UV1" ]
+
+[sub_resource type="CubeMesh" id=14]
+
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+size = Vector3( 30, 3, 2 )
+subdivide_width = 0
+subdivide_height = 0
+subdivide_depth = 0
+
+[sub_resource type="SpatialMaterial" id=15]
+
+render_priority = 0
+flags_transparent = false
+flags_unshaded = false
+flags_vertex_lighting = false
+flags_no_depth_test = false
+flags_use_point_size = false
+flags_world_triplanar = false
+flags_fixed_size = false
+flags_albedo_tex_force_srgb = false
+vertex_color_use_as_albedo = false
+vertex_color_is_srgb = false
+params_diffuse_mode = 0
+params_specular_mode = 0
+params_blend_mode = 0
+params_cull_mode = 0
+params_depth_draw_mode = 0
+params_line_width = 1.0
+params_point_size = 1.0
+params_billboard_mode = 0
+params_grow = false
+params_use_alpha_scissor = false
+albedo_color = Color( 1, 1, 1, 1 )
+albedo_texture = ExtResource( 3 )
+metallic = 0.0
+metallic_specular = 0.5
+metallic_texture_channel = 0
+roughness = 0.0
+roughness_texture_channel = 0
+emission_enabled = false
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 4 )
+rim_enabled = false
+clearcoat_enabled = false
+anisotropy_enabled = false
+ao_enabled = false
+depth_enabled = false
+subsurf_scatter_enabled = false
+transmission_enabled = false
+refraction_enabled = false
+detail_enabled = false
+uv1_scale = Vector3( 1, 1, 1 )
+uv1_offset = Vector3( 0, 0, 0 )
+uv1_triplanar = true
+uv1_triplanar_sharpness = 1.0
+uv2_scale = Vector3( 1, 1, 1 )
+uv2_offset = Vector3( 0, 0, 0 )
+uv2_triplanar = false
+uv2_triplanar_sharpness = 1.0
+proximity_fade_enable = false
+distance_fade_enable = false
+_sections_unfolded = [ "Albedo", "NormalMap", "UV1" ]
+
+[sub_resource type="CubeMesh" id=16]
+
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+size = Vector3( 30, 2, 0.1 )
+subdivide_width = 0
+subdivide_height = 0
+subdivide_depth = 0
+
+[sub_resource type="SpatialMaterial" id=17]
+
+render_priority = 0
+flags_transparent = false
+flags_unshaded = false
+flags_vertex_lighting = false
+flags_no_depth_test = false
+flags_use_point_size = false
+flags_world_triplanar = false
+flags_fixed_size = false
+flags_albedo_tex_force_srgb = false
+vertex_color_use_as_albedo = false
+vertex_color_is_srgb = false
+params_diffuse_mode = 0
+params_specular_mode = 0
+params_blend_mode = 0
+params_cull_mode = 0
+params_depth_draw_mode = 0
+params_line_width = 1.0
+params_point_size = 1.0
+params_billboard_mode = 0
+params_grow = false
+params_use_alpha_scissor = false
+albedo_color = Color( 1, 1, 1, 1 )
+albedo_texture = ExtResource( 17 )
+metallic = 0.0
+metallic_specular = 0.5
+metallic_texture_channel = 0
+roughness = 0.0
+roughness_texture_channel = 0
+emission_enabled = false
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 18 )
+rim_enabled = false
+clearcoat_enabled = false
+anisotropy_enabled = false
+ao_enabled = false
+depth_enabled = false
+subsurf_scatter_enabled = false
+transmission_enabled = false
+refraction_enabled = false
+detail_enabled = false
+uv1_scale = Vector3( 1, -1, 1 )
+uv1_offset = Vector3( 0, 0, 0 )
+uv1_triplanar = true
+uv1_triplanar_sharpness = 1.0
+uv2_scale = Vector3( 1, 1, 1 )
+uv2_offset = Vector3( 0, 0, 0 )
+uv2_triplanar = false
+uv2_triplanar_sharpness = 1.0
+proximity_fade_enable = false
+distance_fade_enable = false
+_sections_unfolded = [ "Albedo", "NormalMap" ]
+
+[node name="Spatial" type="Spatial" index="0"]
+
+[node name="Hero" type="Spatial" parent="." index="0"]
+
+[node name="Luigi" parent="Hero" index="0" instance=ExtResource( 1 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.77329, 0 )
+axis_lock_linear_y = true
+collision/safe_margin = 0.01
+
+[node name="CameraTarget" type="Spatial" parent="Hero/Luigi" index="3"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.88418, 0.367127, 3.62351 )
+
+[node name="Camera" type="InterpolatedCamera" parent="Hero" index="1"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.88418, 2.14042, 3.62351 )
+keep_aspect = 1
+cull_mask = 1048575
+environment = null
+h_offset = 0.0
+v_offset = 0.0
+doppler_tracking = 0
+projection = 0
+current = false
+fov = 70.0
+size = 1.0
+near = 0.05
+far = 100.0
+target = NodePath("../Luigi/CameraTarget")
+speed = 5.0
+enabled = true
+
+[node name="Level" type="Spatial" parent="." index="1"]
+
+editor/display_folded = true
+
+[node name="FloorStatic" type="StaticBody" parent="Level" index="0"]
+
+editor/display_folded = true
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Level/FloorStatic" index="0"]
+
+shape = SubResource( 1 )
+disabled = false
+
+[node name="Ground" type="MeshInstance" parent="Level" index="1"]
+
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, -5.76275, 1.19209e-007 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 2 )
+skeleton = NodePath("..")
+material/0 = SubResource( 3 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Underfloor" type="MeshInstance" parent="Level" index="2"]
+
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, -0.448714, 1.19209e-007 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 4 )
+skeleton = NodePath("..")
+material/0 = SubResource( 5 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Floor" type="MeshInstance" parent="Level" index="3"]
+
+editor/display_folded = true
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 6 )
+skeleton = NodePath("..")
+material/0 = SubResource( 7 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="TableBack" parent="Level/Floor" index="0" instance=ExtResource( 7 )]
+
+editor/display_folded = true
+transform = Transform( 0.999613, 0, -0.0278098, 0, 1, 0, 0.0278098, 0, 0.999613, -3.52564, 0.05, -0.905412 )
+
+[node name="Candelabra" parent="Level/Floor/TableBack" index="1" instance=ExtResource( 8 )]
+
+editor/display_folded = true
+transform = Transform( 0.999613, 0, 0.0278098, 0, 1, 0, -0.0278098, 0, 0.999613, 0.242107, 0.6055, -0.000616133 )
+
+[node name="OmniLight" type="OmniLight" parent="Level/Floor/TableBack/Candelabra" index="1"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.164673, 0.643407, 0 )
+layers = 1
+light_color = Color( 0.898438, 0.571394, 0.150909, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 5.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+_sections_unfolded = [ "Light", "Shadow" ]
+
+[node name="OmniLight2" type="OmniLight" parent="Level/Floor/TableBack/Candelabra" index="2"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0705636, 0.643407, 0 )
+layers = 1
+light_color = Color( 0.898438, 0.571394, 0.150909, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 5.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+_sections_unfolded = [ "Light", "Shadow" ]
+
+[node name="OmniLight3" type="OmniLight" parent="Level/Floor/TableBack/Candelabra" index="3"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0781758, 0.643407, 0.22984 )
+layers = 1
+light_color = Color( 0.898438, 0.571394, 0.150909, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 5.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+_sections_unfolded = [ "Light", "Shadow" ]
+
+[node name="Teaset" parent="Level/Floor/TableBack" index="2" instance=ExtResource( 9 )]
+
+transform = Transform( 0.999613, 0, 0.0278098, 0, 1, 0, -0.0278098, 0, 0.999613, -0.301244, 0.6055, 0.0867393 )
+
+[node name="TableFront" parent="Level/Floor" index="1" instance=ExtResource( 7 )]
+
+transform = Transform( 0.997468, 0, 0.0711219, 0, 1, 0, -0.0711219, 0, 0.997468, 9.1686, 0.05, 0.716925 )
+
+[node name="Candelabra" parent="Level/Floor/TableFront" index="1" instance=ExtResource( 8 )]
+
+transform = Transform( 0.999613, 0, 0.0278098, 0, 1, 0, -0.0278098, 0, 0.999613, 0.242107, 0.6055, -0.000616133 )
+
+[node name="OmniLight" type="OmniLight" parent="Level/Floor/TableFront/Candelabra" index="1"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0299025, 0.643407, 0.102767 )
+layers = 1
+light_color = Color( 0.898438, 0.571394, 0.150909, 1 )
+light_energy = 1.5
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 5.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+_sections_unfolded = [ "Light", "Shadow" ]
+
+[node name="Teaset" parent="Level/Floor/TableFront" index="2" instance=ExtResource( 9 )]
+
+transform = Transform( 0.999613, 0, 0.0278098, 0, 1, 0, -0.0278098, 0, 0.999613, -0.301244, 0.6055, 0.0867393 )
+
+[node name="Carpet" type="MeshInstance" parent="Level/Floor" index="2"]
+
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0.0622137, 0 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 9 )
+skeleton = NodePath("..")
+material/0 = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="RoundTable" parent="Level/Floor" index="3" instance=ExtResource( 11 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51513, 0.05, 1.07445 )
+
+[node name="RoundTable2" parent="Level/Floor" index="4" instance=ExtResource( 11 )]
+
+transform = Transform( 0.882276, 0, -0.470732, 0, 1, 0, 0.470732, 0, 0.882276, 2.12594, 0.05, 0.816327 )
+
+[node name="Teaset" parent="Level/Floor/RoundTable2" index="1" instance=ExtResource( 9 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0709653, 0.4922, 0.0518922 )
+
+[node name="RoundTable3" parent="Level/Floor" index="5" instance=ExtResource( 11 )]
+
+transform = Transform( -0.99537, -0.0961148, 0, 0.0961148, -0.99537, 0, 0, 0, 1, 0.560285, 0.60551, 1.08572 )
+
+[node name="RoundTable4" parent="Level/Floor" index="6" instance=ExtResource( 11 )]
+
+transform = Transform( -0.44876, -0.893652, 0, 0.893652, -0.44876, 0, 0, 0, 1, 1.25469, 0.490409, 0.980903 )
+
+[node name="Wall" type="MeshInstance" parent="Level" index="4"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.95, -1.4 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 10 )
+skeleton = NodePath("..")
+material/0 = SubResource( 11 )
+_sections_unfolded = [ "Geometry", "Transform", "material" ]
+
+[node name="FramedPortrait" parent="Level/Wall" index="0" instance=ExtResource( 13 )]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.32878, -0.856788, 0.100781 )
+
+[node name="OmniLight" type="OmniLight" parent="Level/Wall/FramedPortrait" index="1"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.333877 )
+layers = 1
+light_color = Color( 0.929688, 0.630081, 0.0581055, 1 )
+light_energy = 0.1
+light_indirect_energy = 10.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 2
+light_cull_mask = -1
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 5.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+_sections_unfolded = [ "Editor", "Light", "Omni", "Shadow" ]
+
+[node name="FramedPortrait2" parent="Level/Wall" index="1" instance=ExtResource( 13 )]
+
+editor/display_folded = true
+transform = Transform( 0.985482, 0.169779, 0, -0.169779, 0.985482, 0, 0, 0, 1, -6.96534, -0.906788, 0.100781 )
+
+[node name="OmniLight" type="OmniLight" parent="Level/Wall/FramedPortrait2" index="1"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.333877 )
+layers = 1
+light_color = Color( 0.929688, 0.630081, 0.0581055, 1 )
+light_energy = 0.1
+light_indirect_energy = 10.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 2
+light_cull_mask = -1
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 5.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+_sections_unfolded = [ "Editor", "Light", "Omni", "Shadow" ]
+
+[node name="WallSkirting" type="MeshInstance" parent="Level/Wall" index="2"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0.1 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 12 )
+skeleton = NodePath("..")
+material/0 = SubResource( 13 )
+_sections_unfolded = [ "Geometry", "Transform", "material" ]
+
+[node name="Ceiling" type="MeshInstance" parent="Level" index="5"]
+
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 5.05129, 1.19209e-007 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 14 )
+skeleton = NodePath("..")
+material/0 = SubResource( 15 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Chandelier" parent="Level/Ceiling" index="0" instance=ExtResource( 16 )]
+
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 1.62015, -0.045464, -0.999899 )
+
+[node name="OmniLight" type="OmniLight" parent="Level/Ceiling/Chandelier" index="1"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.55, 1.30317 )
+layers = 1
+light_color = Color( 0.882813, 0.506092, 0.0655212, 1 )
+light_energy = 6.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 5.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+_sections_unfolded = [ "Light", "Shadow" ]
+
+[node name="CeilingSkirting" type="MeshInstance" parent="Level/Ceiling" index="1"]
+
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 1.3, -0.851286 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 16 )
+skeleton = NodePath("..")
+material/0 = SubResource( 17 )
+_sections_unfolded = [ "Geometry", "Transform", "material" ]
+
+[node name="TelephoneTable" parent="." index="2" instance=ExtResource( 19 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.39882, 0.0499997, -0.867883 )
+
+[node name="BroomBasin" parent="." index="3" instance=ExtResource( 20 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.53874, 0.0617189, 1.19658 )
+
+[node name="OmniLight" type="OmniLight" parent="." index="4"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3801, 1.35806, 0 )
+layers = 1
+light_color = Color( 0.268066, 0.337875, 0.714844, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 5.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+_sections_unfolded = [ "Light", "Shadow" ]
+
+

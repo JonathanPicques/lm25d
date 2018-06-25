@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/RoundTable.obj-1062b82c7a47ccd9355ea16ec181043d.mesh"
+
+[deps]
+
+files=[ "res://.import/RoundTable.obj-1062b82c7a47ccd9355ea16ec181043d.mesh" ]
+
+source_file="res://Objects/Decors/RoundTable/Meshes/RoundTable.obj"
+dest_files=[ "res://.import/RoundTable.obj-1062b82c7a47ccd9355ea16ec181043d.mesh", "res://.import/RoundTable.obj-1062b82c7a47ccd9355ea16ec181043d.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
