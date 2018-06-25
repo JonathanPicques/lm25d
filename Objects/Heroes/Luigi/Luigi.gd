@@ -64,18 +64,24 @@ func stand(delta):
 		velocity = get_movement(delta, velocity, Vector3(), FLOOR_ACC, FLOOR_DEC, FLOOR_MAX_SPEED)
 
 func pre_walk():
+	smoke_particle.emitting = true
 	_change_animation("Walk")
 
 func walk(delta):
 	velocity = get_movement(delta, velocity, input_velocity, FLOOR_ACC, FLOOR_DEC, FLOOR_MAX_SPEED)
 	velocity = get_gravity_acceleration(delta, velocity, GRAVITY, GRAVITY_MAX_SPEED)
+	smoke_particle.emitting = is_moving_x(input_velocity) or is_moving_z(input_velocity)
 	if not on_floor:
+		smoke_particle.emitting = false
 		return set_state(HeroState.fall)
 	elif input_jump and jumps > 0:
+		smoke_particle.emitting = false
 		return set_state(HeroState.jump)
 	elif not is_moving_x(velocity) and not is_moving_z(velocity) and not is_moving_z(input_velocity):
+		smoke_particle.emitting = false
 		return set_state(HeroState.stand)
 	elif is_moving_x(velocity) and not is_moving_direction(direction, velocity) and not is_moving_direction(direction, input_velocity):
+		smoke_particle.emitting = false
 		return set_state(HeroState.stand)
 
 func pre_walk_turn():

@@ -36,6 +36,7 @@ var _floor_time = 0
 
 onready var timer = $Timer
 onready var sprite = $Sprite3D
+onready var smoke_particle = $SmokeParticles
 onready var animation_player = $AnimationPlayer
 
 # _process updates input.
@@ -48,6 +49,8 @@ func _process(delta):
 	var right = 1 if Input.is_action_pressed("player_right") else 0
 	input_jump = Input.is_action_just_pressed("player_jump")
 	input_velocity = Vector3(right - left, input_velocity.y, down - up)
+
+var f = 0
 
 # _process_velocity updates position after velocity is applied.
 # @impure

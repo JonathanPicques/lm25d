@@ -535,7 +535,6 @@ _sections_unfolded = [ "Albedo", "NormalMap" ]
 
 [node name="Luigi" parent="Hero" index="0" instance=ExtResource( 1 )]
 
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.77329, 0 )
 axis_lock_linear_y = true
 collision/safe_margin = 0.01
@@ -848,7 +847,6 @@ _sections_unfolded = [ "Geometry", "Transform", "material" ]
 
 [node name="FramedPortrait" parent="Level/Wall" index="0" instance=ExtResource( 13 )]
 
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.32878, -0.856788, 0.100781 )
 
 [node name="OmniLight" type="OmniLight" parent="Level/Wall/FramedPortrait" index="1"]
