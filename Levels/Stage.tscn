@@ -533,8 +533,11 @@ _sections_unfolded = [ "Albedo", "NormalMap" ]
 
 [node name="Hero" type="Spatial" parent="." index="0"]
 
+editor/display_folded = true
+
 [node name="Luigi" parent="Hero" index="0" instance=ExtResource( 1 )]
 
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.77329, 0 )
 axis_lock_linear_y = true
 collision/safe_margin = 0.01

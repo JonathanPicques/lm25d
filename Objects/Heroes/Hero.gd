@@ -34,10 +34,14 @@ var on_floor = false
 var _wall_time = 0
 var _floor_time = 0
 
+var _every_timer_tag = null
+
 onready var timer = $Timer
 onready var sprite = $Sprite3D
+onready var every_timer = $EveryTimer
 onready var smoke_particle = $SmokeParticles
 onready var animation_player = $AnimationPlayer
+onready var audio_stream_player = $AudioStreamPlayer3D
 
 # _process updates input.
 # @impure
@@ -73,6 +77,18 @@ func _start_timer(duration):
 	timer.wait_time = duration
 	timer.start()
 
+# _every_seconds returns true every given seconds.
+# @impure
+# @param(float) seconds
+# @param(string) timer_tag
+func _every_seconds(seconds, timer_tag):
+	if _every_timer_tag != timer_tag or every_timer.is_stopped():
+		_every_timer_tag = timer_tag
+		every_timer.wait_time = seconds
+		every_timer.start()
+		return true
+	return false
+
 # _change_direction changes the hero direction and flips the sprite accordingly.
 # @impure
 # @param(float) new_direction
@@ -85,6 +101,14 @@ func _change_direction(new_direction):
 # @param(string) animation
 func _change_animation(animation):
 	animation_player.play(animation)
+
+# _play_sound_effect plays a sound effect if not already playing (can be forced).
+# @impure
+# @param(AudioStreamSample) stream
+func _play_sound_effect(stream, force = true):
+	if force or not audio_stream_player.is_playing():
+		audio_stream_player.stream = stream
+		audio_stream_player.play()
 
 # is_moving_x returns true if the given velocity has a non-zero x.
 # @pure
