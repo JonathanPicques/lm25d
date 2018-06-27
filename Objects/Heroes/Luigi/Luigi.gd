@@ -6,11 +6,11 @@ const JUMP_STRENGTH = 5.5
 const GRAVITY = Vector3(0, -16.0, 0)
 const GRAVITY_MAX_SPEED = Vector3(0, -22.0, 0)
 
-const FLOOR_ACC = Vector3(6.0, 0.0, 4.0)
+const FLOOR_ACC = Vector3(4.0, 0.0, 4.0)
 const FLOOR_DEC = Vector3(11.0, 0.0, 6.0)
 const FLOOR_MAX_SPEED = Vector3(3.4, 0, 2.8)
 
-const AIRBORNE_ACC = Vector3(5.0, 0.0, 3.0)
+const AIRBORNE_ACC = Vector3(3.5, 0.0, 3.0)
 const AIRBORNE_DEC = Vector3(11.0, 0.0, 6.5)
 const AIRBORNE_MAX_SPEED = Vector3(3.2, 0.0, 2.4)
 
@@ -69,14 +69,16 @@ func stand(delta):
 
 func pre_walk():
 	smoke_particle.emitting = true
+	_every_seconds(0, "res")
 	_change_animation("Walk")
 
 func walk(delta):
 	velocity = get_movement(delta, velocity, input_velocity, FLOOR_ACC, FLOOR_DEC, FLOOR_MAX_SPEED)
 	velocity = get_gravity_acceleration(delta, velocity, GRAVITY, GRAVITY_MAX_SPEED)
 	smoke_particle.emitting = is_moving_x(input_velocity) or is_moving_z(input_velocity)
+	animation_player.playback_speed = 1
 	if _every_seconds(0.24, "walk"):
-		if not _sound_effect_playing(turn_sound):
+		if not _is_sound_effect_playing(turn_sound):
 			_play_sound_effect(step_sound, true)
 	if not on_floor:
 		smoke_particle.emitting = false

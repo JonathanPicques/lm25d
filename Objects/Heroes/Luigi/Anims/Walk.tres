@@ -5,23 +5,23 @@
 [resource]
 
 resource_name = "Walk"
-length = 0.6
+length = 0.36
 loop = true
 step = 0.01
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/path = NodePath("HeroSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"times": PoolRealArray( 0, 0.06, 0.12, 0.18, 0.24, 0.3, 0.36 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite3D:texture")
+tracks/1/path = NodePath("HeroSprite:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -33,7 +33,7 @@ tracks/1/keys = {
 "values": [ ExtResource( 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite3D:hframes")
+tracks/2/path = NodePath("HeroSprite:hframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -43,5 +43,17 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 6 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("HeroSprite/VacuumSprite:offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.06, 0.18, 0.24, 0.36 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, 7 ), Vector2( 0, 8 ), Vector2( 0, 7 ), Vector2( 0, 8 ), Vector2( 0, 7 ) ]
 }
 

@@ -23,6 +23,7 @@ var state = HeroState.stand
 var state_prev = HeroState.stand
 
 var velocity = Vector3()
+var velocity_prev = velocity
 
 var input_jump = false
 var input_velocity = Vector3()
@@ -37,7 +38,7 @@ var _floor_time = 0
 var _every_timer_tag = null
 
 onready var timer = $Timer
-onready var sprite = $Sprite3D
+onready var sprite = $HeroSprite
 onready var every_timer = $EveryTimer
 onready var smoke_particle = $SmokeParticles
 onready var animation_player = $AnimationPlayer
@@ -54,12 +55,11 @@ func _process(delta):
 	input_jump = Input.is_action_just_pressed("player_jump")
 	input_velocity = Vector3(right - left, input_velocity.y, down - up)
 
-var f = 0
-
 # _process_velocity updates position after velocity is applied.
 # @impure
 # @param(float) delta
 func _process_velocity(delta):
+	velocity_prev = velocity
 	velocity = move_and_slide(velocity, FLOOR_VECTOR, 0.0)
 	_wall_time -= delta
 	_floor_time -= delta
@@ -114,7 +114,7 @@ func _play_sound_effect(stream, force = true):
 # @pure
 # @param(AudioStreamSample) stream
 # @returns(bool)
-func _sound_effect_playing(stream):
+func _is_sound_effect_playing(stream):
 	return audio_stream_player.stream == stream and audio_stream_player.is_playing()
 
 # is_moving_x returns true if the given velocity has a non-zero x.
@@ -131,7 +131,7 @@ func is_moving_x(velocity):
 func is_moving_z(velocity):
 	return velocity.z != 0
 
-# is_moving_direction returns true if the given velocity is moving in the given direction.
+# is_moving_direction returns true if the given velocity in x is moving in the given direction.
 # @pure
 # @param (float) direction
 # @param(Vector3) velocity
