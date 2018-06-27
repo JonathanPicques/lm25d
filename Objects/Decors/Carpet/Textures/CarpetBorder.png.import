@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CarpetTile.png-85b0f506a13c1532f2ab720c2d15f382.stex"
+path="res://.import/CarpetBorder.png-e22a5ff1344f0ddd79753b98b026f544.stex"
 
 [deps]
 
-source_file="res://Objects/Decors/Carpet/Textures/CarpetTile.png"
-dest_files=[ "res://.import/CarpetTile.png-85b0f506a13c1532f2ab720c2d15f382.stex" ]
+source_file="res://Objects/Decors/Carpet/Textures/CarpetBorder.png"
+dest_files=[ "res://.import/CarpetBorder.png-e22a5ff1344f0ddd79753b98b026f544.stex" ]
 
 [params]
 

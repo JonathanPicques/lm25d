@@ -15,7 +15,7 @@ enum HeroDirection {
 	right = 1
 }
 
-const FLOOR_VECTOR = Vector3(0.0, 1.0, 0.0)
+const FLOOR_VECTOR = Vector3(0, 1, 0)
 
 var jumps = 0
 
@@ -109,6 +109,13 @@ func _play_sound_effect(stream, force = true):
 	if force or not audio_stream_player.is_playing():
 		audio_stream_player.stream = stream
 		audio_stream_player.play()
+
+# _sound_effect_playing returns true if the given stream is playing.
+# @pure
+# @param(AudioStreamSample) stream
+# @returns(bool)
+func _sound_effect_playing(stream):
+	return audio_stream_player.stream == stream and audio_stream_player.is_playing()
 
 # is_moving_x returns true if the given velocity has a non-zero x.
 # @pure

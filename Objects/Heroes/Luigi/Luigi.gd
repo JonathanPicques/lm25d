@@ -75,8 +75,9 @@ func walk(delta):
 	velocity = get_movement(delta, velocity, input_velocity, FLOOR_ACC, FLOOR_DEC, FLOOR_MAX_SPEED)
 	velocity = get_gravity_acceleration(delta, velocity, GRAVITY, GRAVITY_MAX_SPEED)
 	smoke_particle.emitting = is_moving_x(input_velocity) or is_moving_z(input_velocity)
-	if _every_seconds(min(max(abs(velocity.x) / 10, 0.12), 0.24), "walk"):
-		_play_sound_effect(step_sound, true)
+	if _every_seconds(0.24, "walk"):
+		if not _sound_effect_playing(turn_sound):
+			_play_sound_effect(step_sound, true)
 	if not on_floor:
 		smoke_particle.emitting = false
 		return set_state(HeroState.fall)

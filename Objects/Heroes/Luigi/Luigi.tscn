@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Objects/Heroes/Luigi/Luigi.gd" type="Script" id=1]
-[ext_resource path="res://Objects/Heroes/Luigi/Textures/Turn/LuigiTurn.png" type="Texture" id=2]
+[ext_resource path="res://Objects/Heroes/Luigi/Textures/Stand/LuigiStand.png" type="Texture" id=2]
 [ext_resource path="res://Objects/Effects/Cloud/Cloud.tres" type="ArrayMesh" id=3]
 [ext_resource path="res://Objects/Heroes/Luigi/Anims/Fall.tres" type="Animation" id=4]
 [ext_resource path="res://Objects/Heroes/Luigi/Anims/Jump.tres" type="Animation" id=5]
@@ -239,7 +239,7 @@ pitch_scale = 1.0
 autoplay = false
 max_distance = 0.0
 out_of_range_mode = 0
-bus = "SFX"
+bus = "Master"
 area_mask = 1
 emission_angle_enabled = false
 emission_angle_degrees = 45.0
