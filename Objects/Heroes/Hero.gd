@@ -4,6 +4,8 @@ enum HeroState {
 	stand,
 
 	walk,
+	walk_2,
+	walk_skid,
 	walk_turn,
 
 	jump,
@@ -89,6 +91,12 @@ func _every_seconds(seconds, timer_tag):
 		return true
 	return false
 
+# _is_timer_over returns true if the timer is finished.
+# @pure
+# @param(float) duration
+func _is_timer_finished():
+	return timer.is_stopped()
+
 # _change_direction changes the hero direction and flips the sprite accordingly.
 # @impure
 # @param(float) new_direction
@@ -101,6 +109,12 @@ func _change_direction(new_direction):
 # @param(string) animation
 func _change_animation(animation):
 	animation_player.play(animation)
+
+# _change_animation_speed changes the sprite animation speed.
+# @impure
+# @param(float) speed
+func _change_animation_speed(speed):
+	animation_player.playback_speed = speed
 
 # _play_sound_effect plays a sound effect if not already playing (can be forced).
 # @impure

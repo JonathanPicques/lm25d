@@ -105,7 +105,7 @@ damping = 0.3
 damping_random = 0.0
 angle = 0.3
 angle_random = 0.0
-scale = 0.5
+scale = 0.4
 scale_random = 0.1
 scale_curve = SubResource( 4 )
 color = Color( 1, 1, 1, 1 )
@@ -116,7 +116,6 @@ anim_speed_random = 0.0
 anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
-_sections_unfolded = [ "Scale", "Spread" ]
 
 [node name="Luigi" type="KinematicBody" index="0"]
 
@@ -244,7 +243,7 @@ draw_order = 0
 process_material = SubResource( 5 )
 draw_passes = 1
 draw_pass_1 = ExtResource( 4 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+_sections_unfolded = [ "Process Material", "Transform", "Visibility" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
 
