@@ -56,4 +56,16 @@ tracks/3/keys = {
 "update": 1,
 "values": [ Vector2( 0, 7 ), Vector2( 0, 8 ), Vector2( 0, 7 ), Vector2( 0, 8 ), Vector2( 0, 7 ) ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("HeroSprite/Flashlight Cone:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.06, 0.18, 0.24 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( -0.15, -0.44, 0 ), Vector3( -0.15, -0.48, 0 ), Vector3( -0.15, -0.44, 0 ), Vector3( -0.15, -0.48, 0 ) ]
+}
 

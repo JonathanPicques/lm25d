@@ -103,12 +103,13 @@ func _is_timer_finished():
 func _change_direction(new_direction):
 	direction = new_direction
 	sprite.scale.x = new_direction
+	# sprite.transform = sprite.transform.rotated(Vector3(0.0, 1.0, 0.0), PI)
 
 # _change_animation changes the sprite animation.
 # @impure
 # @param(string) animation
 func _change_animation(animation):
-	animation_player.play(animation)
+	animation_player.play(animation + " Flashlight" if animation != "Turn" else "Turn")
 
 # _change_animation_speed changes the sprite animation speed.
 # @impure

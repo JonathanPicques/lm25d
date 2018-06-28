@@ -79,7 +79,7 @@ func pre_walk():
 	walk_lock_velocity = input_velocity
 	walk_lock_direction = direction
 	_start_timer(0.25)
-	_every_seconds(0.0, "r")
+	_every_seconds(1.0, "r")
 	_change_animation("Walk")
 	if is_moving_direction(direction, velocity) and abs(velocity.x) > FLOOR_MAX_SPEED.x - 1.0:
 		return self.set_state(HeroState.walk_2)
@@ -98,7 +98,7 @@ func walk(delta):
 		return self.set_state(HeroState.walk_2)
 
 func pre_walk_2():
-	_every_seconds(0.0, "r")
+	_every_seconds(1.0, "r")
 
 func walk_2(delta):
 	velocity = get_movement(delta, velocity, input_velocity, FLOOR_ACC, FLOOR_DEC, FLOOR_MAX_SPEED)

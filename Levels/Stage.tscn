@@ -655,11 +655,12 @@ collision/safe_margin = 0.01
 
 [node name="CameraTarget" type="Spatial" parent="Hero/Luigi" index="3"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.88418, 0.367127, 3.62351 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 3.5 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Camera" type="InterpolatedCamera" parent="Hero" index="1"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.88418, 1.19042, 3.62351 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4013e-045, 1.17329, 3.5 )
 keep_aspect = 1
 cull_mask = 1048575
 environment = null
@@ -678,11 +679,8 @@ enabled = true
 
 [node name="Level" type="Spatial" parent="." index="1"]
 
-editor/display_folded = true
-
 [node name="Floor" type="MeshInstance" parent="Level" index="0"]
 
-editor/display_folded = true
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -712,17 +710,16 @@ transform = Transform( 0.642788, 0, -0.766044, 0, 1, 0, 0.766044, 0, 0.642788, 3
 
 [node name="TableBack" parent="Level/Floor" index="2" instance=ExtResource( 7 )]
 
-editor/display_folded = true
 transform = Transform( 0.999613, 0, -0.0278098, 0, 1, 0, 0.0278098, 0, 0.999613, -3.52564, 0.05, -1.10541 )
 
 [node name="Candelabra" parent="Level/Floor/TableBack" index="1" instance=ExtResource( 8 )]
 
-editor/display_folded = true
 transform = Transform( 0.999613, 0, 0.0278098, 0, 1, 0, -0.0278098, 0, 0.999613, 0.242107, 0.6055, -0.000616133 )
 
 [node name="OmniLight" type="OmniLight" parent="Level/Floor/TableBack/Candelabra" index="1"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.164673, 0.643407, 0 )
+visible = false
 layers = 1
 light_color = Color( 0.898438, 0.571394, 0.150909, 1 )
 light_energy = 1.0
@@ -746,6 +743,7 @@ _sections_unfolded = [ "Light", "Shadow" ]
 [node name="OmniLight2" type="OmniLight" parent="Level/Floor/TableBack/Candelabra" index="2"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0705636, 0.643407, 0 )
+visible = false
 layers = 1
 light_color = Color( 0.898438, 0.571394, 0.150909, 1 )
 light_energy = 1.0
@@ -769,6 +767,7 @@ _sections_unfolded = [ "Light", "Shadow" ]
 [node name="OmniLight3" type="OmniLight" parent="Level/Floor/TableBack/Candelabra" index="3"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0781758, 0.643407, 0.22984 )
+visible = false
 layers = 1
 light_color = Color( 0.898438, 0.571394, 0.150909, 1 )
 light_energy = 1.0
@@ -793,27 +792,111 @@ _sections_unfolded = [ "Light", "Shadow" ]
 
 transform = Transform( 0.999613, 0, 0.0278098, 0, 1, 0, -0.0278098, 0, 0.999613, -0.301244, 0.6055, 0.0867393 )
 
-[node name="RoundTableFront1" parent="Level/Floor" index="3" instance=ExtResource( 4 )]
+[node name="TableBack2" parent="Level/Floor" index="3" instance=ExtResource( 7 )]
+
+transform = Transform( 0.999613, 0, -0.0278098, 0, 1, 0, 0.0278098, 0, 0.999613, -6.53007, 0.05, -0.482025 )
+
+[node name="Candelabra" parent="Level/Floor/TableBack2" index="1" instance=ExtResource( 8 )]
+
+transform = Transform( 0.999613, 0, 0.0278098, 0, 1, 0, -0.0278098, 0, 0.999613, 0.242107, 0.6055, -0.000616133 )
+
+[node name="OmniLight" type="OmniLight" parent="Level/Floor/TableBack2/Candelabra" index="1"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.164673, 0.643407, 0 )
+visible = false
+layers = 1
+light_color = Color( 0.898438, 0.571394, 0.150909, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 5.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+_sections_unfolded = [ "Light", "Shadow" ]
+
+[node name="OmniLight2" type="OmniLight" parent="Level/Floor/TableBack2/Candelabra" index="2"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0705636, 0.643407, 0 )
+visible = false
+layers = 1
+light_color = Color( 0.898438, 0.571394, 0.150909, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 5.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+_sections_unfolded = [ "Light", "Shadow" ]
+
+[node name="OmniLight3" type="OmniLight" parent="Level/Floor/TableBack2/Candelabra" index="3"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0781758, 0.643407, 0.22984 )
+visible = false
+layers = 1
+light_color = Color( 0.898438, 0.571394, 0.150909, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 5.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+_sections_unfolded = [ "Light", "Shadow" ]
+
+[node name="Teaset" parent="Level/Floor/TableBack2" index="2" instance=ExtResource( 5 )]
+
+transform = Transform( 0.999613, 0, 0.0278098, 0, 1, 0, -0.0278098, 0, 0.999613, -0.301244, 0.6055, 0.0867393 )
+
+[node name="RoundTableFront1" parent="Level/Floor" index="4" instance=ExtResource( 4 )]
 
 transform = Transform( -0.99537, -0.0961148, 0, 0.0961148, -0.99537, 0, 0, 0, 1, 0.560285, 0.60551, 1.23053 )
 
-[node name="RoundTableFront2" parent="Level/Floor" index="4" instance=ExtResource( 4 )]
+[node name="RoundTableFront2" parent="Level/Floor" index="5" instance=ExtResource( 4 )]
 
 transform = Transform( -0.44876, -0.893652, 0, 0.893652, -0.44876, 0, 0, 0, 1, 1.25469, 0.490409, 1.12571 )
 
-[node name="RoundTableFront3" parent="Level/Floor" index="5" instance=ExtResource( 4 )]
+[node name="RoundTableFront3" parent="Level/Floor" index="6" instance=ExtResource( 4 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51513, 0.05, 1.21926 )
 
-[node name="CarFront" parent="Level/Floor" index="6" instance=ExtResource( 9 )]
+[node name="CarFront" parent="Level/Floor" index="7" instance=ExtResource( 9 )]
 
 transform = Transform( 0.529173, 0, 0.848514, 0, 1, 0, -0.848514, 0, 0.529173, 2.06244, 0.21463, 1.13074 )
 
-[node name="BroomBasinFront" parent="Level/Floor" index="7" instance=ExtResource( 10 )]
+[node name="BroomBasinFront" parent="Level/Floor" index="8" instance=ExtResource( 10 )]
 
 transform = Transform( 0.809514, 0, 0.5871, 0, 1, 0, -0.5871, 0, 0.809514, 2.65823, 0.0617189, 1.2347 )
 
-[node name="TableFront" parent="Level/Floor" index="8" instance=ExtResource( 7 )]
+[node name="TableFront" parent="Level/Floor" index="9" instance=ExtResource( 7 )]
 
 editor/display_folded = true
 transform = Transform( 0.997468, 0, 0.0711219, 0, 1, 0, -0.0711219, 0, 0.997468, 9.1686, 0.05, 0.716925 )
@@ -849,7 +932,7 @@ _sections_unfolded = [ "Light", "Shadow" ]
 
 transform = Transform( 0.999613, 0, 0.0278098, 0, 1, 0, -0.0278098, 0, 0.999613, -0.301244, 0.6055, 0.0867393 )
 
-[node name="CarpetBorder2" type="MeshInstance" parent="Level/Floor" index="9"]
+[node name="CarpetBorder2" type="MeshInstance" parent="Level/Floor" index="10"]
 
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0.0622137, -0.977179 )
 layers = 1
@@ -866,7 +949,7 @@ skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "Geometry", "Transform" ]
 
-[node name="CarpetBorder" type="MeshInstance" parent="Level/Floor" index="10"]
+[node name="CarpetBorder" type="MeshInstance" parent="Level/Floor" index="11"]
 
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0.0622137, 0.972821 )
 layers = 1
@@ -883,7 +966,7 @@ skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "Geometry", "Transform" ]
 
-[node name="Carpet" type="MeshInstance" parent="Level/Floor" index="11"]
+[node name="Carpet" type="MeshInstance" parent="Level/Floor" index="12"]
 
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0.0622137, 0 )
 layers = 1
@@ -900,7 +983,7 @@ skeleton = NodePath("..")
 material/0 = SubResource( 7 )
 _sections_unfolded = [ "Transform", "material" ]
 
-[node name="Brick" type="MeshInstance" parent="Level/Floor" index="12"]
+[node name="Brick" type="MeshInstance" parent="Level/Floor" index="13"]
 
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, -0.448714, 1.19209e-007 )
 layers = 1
@@ -917,7 +1000,7 @@ skeleton = NodePath("..")
 material/0 = SubResource( 9 )
 _sections_unfolded = [ "Transform", "material" ]
 
-[node name="Dirt" type="MeshInstance" parent="Level/Floor" index="13"]
+[node name="Dirt" type="MeshInstance" parent="Level/Floor" index="14"]
 
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, -5.76275, 1.19209e-007 )
 layers = 1
