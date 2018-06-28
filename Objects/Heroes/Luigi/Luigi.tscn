@@ -1,15 +1,21 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Objects/Heroes/Luigi/Luigi.gd" type="Script" id=1]
-[ext_resource path="res://Objects/Heroes/Luigi/Textures/Walk/LuigiWalk.png" type="Texture" id=2]
+[ext_resource path="res://Objects/Heroes/Luigi/Textures/Skid/LuigiSkidFlashlight.png" type="Texture" id=2]
 [ext_resource path="res://Objects/Heroes/Luigi/Textures/Vacuum/Vacuum.png" type="Texture" id=3]
-[ext_resource path="res://Objects/Effects/Cloud/Cloud.tres" type="ArrayMesh" id=4]
-[ext_resource path="res://Objects/Heroes/Luigi/Anims/Fall.tres" type="Animation" id=5]
-[ext_resource path="res://Objects/Heroes/Luigi/Anims/Jump.tres" type="Animation" id=6]
-[ext_resource path="res://Objects/Heroes/Luigi/Anims/Skid.tres" type="Animation" id=7]
-[ext_resource path="res://Objects/Heroes/Luigi/Anims/Stand.tres" type="Animation" id=8]
-[ext_resource path="res://Objects/Heroes/Luigi/Anims/Turn.tres" type="Animation" id=9]
-[ext_resource path="res://Objects/Heroes/Luigi/Anims/Walk.tres" type="Animation" id=10]
+[ext_resource path="res://Objects/Heroes/Luigi/Meshes/Flashlight.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://Objects/Effects/Cloud/Cloud.tres" type="ArrayMesh" id=5]
+[ext_resource path="res://Objects/Heroes/Luigi/Anims/Fall.tres" type="Animation" id=6]
+[ext_resource path="res://Objects/Heroes/Luigi/Anims/Fall Flashlight.tres" type="Animation" id=7]
+[ext_resource path="res://Objects/Heroes/Luigi/Anims/Jump.tres" type="Animation" id=8]
+[ext_resource path="res://Objects/Heroes/Luigi/Textures/Fall/LuigiFallFlashlight.png" type="Texture" id=9]
+[ext_resource path="res://Objects/Heroes/Luigi/Anims/Skid.tres" type="Animation" id=10]
+[ext_resource path="res://Objects/Heroes/Luigi/Anims/Skid Flashlight.tres" type="Animation" id=11]
+[ext_resource path="res://Objects/Heroes/Luigi/Anims/Stand.tres" type="Animation" id=12]
+[ext_resource path="res://Objects/Heroes/Luigi/Anims/Stand Flashlight.tres" type="Animation" id=13]
+[ext_resource path="res://Objects/Heroes/Luigi/Anims/Turn.tres" type="Animation" id=14]
+[ext_resource path="res://Objects/Heroes/Luigi/Anims/Walk.tres" type="Animation" id=15]
+[ext_resource path="res://Objects/Heroes/Luigi/Anims/Walk Flashlight.tres" type="Animation" id=16]
 
 [sub_resource type="SpatialMaterial" id=1]
 
@@ -63,24 +69,76 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Flags", "Metallic", "Parameters", "Roughness", "Vertex Color" ]
 
-[sub_resource type="BoxShape" id=2]
+[sub_resource type="SpatialMaterial" id=2]
+
+render_priority = 0
+flags_transparent = true
+flags_unshaded = true
+flags_vertex_lighting = false
+flags_no_depth_test = false
+flags_use_point_size = false
+flags_world_triplanar = false
+flags_fixed_size = false
+flags_albedo_tex_force_srgb = false
+vertex_color_use_as_albedo = false
+vertex_color_is_srgb = false
+params_diffuse_mode = 0
+params_specular_mode = 0
+params_blend_mode = 0
+params_cull_mode = 0
+params_depth_draw_mode = 0
+params_line_width = 1.0
+params_point_size = 1.0
+params_billboard_mode = 0
+params_grow = false
+params_use_alpha_scissor = false
+albedo_color = Color( 1, 0.914063, 0, 0.0773333 )
+metallic = 0.0
+metallic_specular = 0.5
+metallic_texture_channel = 0
+roughness = 0.0
+roughness_texture_channel = 0
+emission_enabled = false
+normal_enabled = false
+rim_enabled = false
+clearcoat_enabled = false
+anisotropy_enabled = false
+ao_enabled = false
+depth_enabled = false
+subsurf_scatter_enabled = false
+transmission_enabled = false
+refraction_enabled = false
+detail_enabled = false
+uv1_scale = Vector3( 1, 1, 1 )
+uv1_offset = Vector3( 0, 0, 0 )
+uv1_triplanar = false
+uv1_triplanar_sharpness = 1.0
+uv2_scale = Vector3( 1, 1, 1 )
+uv2_offset = Vector3( 0, 0, 0 )
+uv2_triplanar = false
+uv2_triplanar_sharpness = 1.0
+proximity_fade_enable = false
+distance_fade_enable = false
+_sections_unfolded = [ "Albedo", "Flags", "Vertex Color" ]
+
+[sub_resource type="BoxShape" id=3]
 
 extents = Vector3( 0.339855, 0.74747, 0.0364697 )
 
-[sub_resource type="Curve" id=3]
+[sub_resource type="Curve" id=4]
 
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
 _data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.323616, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.899506, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=4]
+[sub_resource type="CurveTexture" id=5]
 
 flags = 4
 width = 2048
-curve = SubResource( 3 )
+curve = SubResource( 4 )
 
-[sub_resource type="ParticlesMaterial" id=5]
+[sub_resource type="ParticlesMaterial" id=6]
 
 render_priority = 0
 trail_divisor = 1
@@ -107,7 +165,7 @@ angle = 0.3
 angle_random = 0.0
 scale = 0.4
 scale_random = 0.1
-scale_curve = SubResource( 4 )
+scale_curve = SubResource( 5 )
 color = Color( 1, 1, 1, 1 )
 hue_variation = 0.0
 hue_variation_random = 0.0
@@ -116,6 +174,48 @@ anim_speed_random = 0.0
 anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
+
+[sub_resource type="Animation" id=7]
+
+length = 0.1
+loop = false
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("HeroSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("HeroSprite:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 9 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("HeroSprite:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
 
 [node name="Luigi" type="KinematicBody" index="0"]
 
@@ -158,8 +258,8 @@ double_sided = true
 alpha_cut = 2
 texture = ExtResource( 2 )
 vframes = 1
-hframes = 6
-frame = 2
+hframes = 1
+frame = 0
 region_enabled = false
 region_rect = Rect2( 0, 0, 0, 0 )
 _sections_unfolded = [ "Flags", "Geometry", "Transform" ]
@@ -177,7 +277,7 @@ lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
 centered = true
-offset = Vector2( 0, 8 )
+offset = Vector2( 0, 7 )
 flip_h = false
 flip_v = false
 modulate = Color( 1, 1, 1, 1 )
@@ -196,6 +296,46 @@ region_enabled = false
 region_rect = Rect2( 0, 0, 0, 0 )
 _sections_unfolded = [ "Transform" ]
 
+[node name="MeshInstance" type="MeshInstance" parent="HeroSprite" index="1"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.319513, -0.265573, 0 )
+layers = 1
+material_override = null
+cast_shadow = 0
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 4 )
+skeleton = NodePath("..")
+material/0 = SubResource( 2 )
+_sections_unfolded = [ "material" ]
+
+[node name="SpotLight" type="SpotLight" parent="HeroSprite/MeshInstance" index="0"]
+
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 0, 0, 0 )
+layers = 1
+light_color = Color( 1, 0.867188, 0, 1 )
+light_energy = 10.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+spot_range = 2.36966
+spot_attenuation = 1.0
+spot_angle = 26.7187
+spot_angle_attenuation = 1.0
+_sections_unfolded = [ "Transform" ]
+
 [node name="Timer" type="Timer" parent="." index="1"]
 
 process_mode = 1
@@ -212,7 +352,7 @@ autostart = false
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="3"]
 
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 disabled = false
 
 [node name="SmokeParticles" type="Particles" parent="." index="4"]
@@ -240,9 +380,9 @@ fract_delta = true
 visibility_aabb = AABB( -4, -4, -4, 8, 8, 8 )
 local_coords = false
 draw_order = 0
-process_material = SubResource( 5 )
+process_material = SubResource( 6 )
 draw_passes = 1
-draw_pass_1 = ExtResource( 4 )
+draw_pass_1 = ExtResource( 5 )
 _sections_unfolded = [ "Process Material", "Transform", "Visibility" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
@@ -252,12 +392,17 @@ autoplay = "Stand"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Fall = ExtResource( 5 )
-anims/Jump = ExtResource( 6 )
-anims/Skid = ExtResource( 7 )
-anims/Stand = ExtResource( 8 )
-anims/Turn = ExtResource( 9 )
-anims/Walk = ExtResource( 10 )
+anims/Fall = ExtResource( 6 )
+"anims/Fall Flashlight" = ExtResource( 7 )
+anims/Jump = ExtResource( 8 )
+"anims/Jump Flashlight" = SubResource( 7 )
+anims/Skid = ExtResource( 10 )
+"anims/Skid Flashlight" = ExtResource( 11 )
+anims/Stand = ExtResource( 12 )
+"anims/Stand Flashlight" = ExtResource( 13 )
+anims/Turn = ExtResource( 14 )
+anims/Walk = ExtResource( 15 )
+"anims/Walk Flashlight" = ExtResource( 16 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 

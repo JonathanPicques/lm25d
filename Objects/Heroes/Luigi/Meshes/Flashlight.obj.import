@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Flashlight.obj-93a91f69611a80797bec7cb51d2f6396.mesh"
+
+[deps]
+
+files=[ "res://.import/Flashlight.obj-93a91f69611a80797bec7cb51d2f6396.mesh" ]
+
+source_file="res://Objects/Heroes/Luigi/Meshes/Flashlight.obj"
+dest_files=[ "res://.import/Flashlight.obj-93a91f69611a80797bec7cb51d2f6396.mesh", "res://.import/Flashlight.obj-93a91f69611a80797bec7cb51d2f6396.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
