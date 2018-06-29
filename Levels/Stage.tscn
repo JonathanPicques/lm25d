@@ -647,8 +647,11 @@ _sections_unfolded = [ "Albedo", "NormalMap", "UV1" ]
 
 [node name="Hero" type="Spatial" parent="." index="0"]
 
+editor/display_folded = true
+
 [node name="Luigi" parent="Hero" index="0" instance=ExtResource( 1 )]
 
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82329, 0 )
 axis_lock_linear_y = true
 collision/safe_margin = 0.01
@@ -681,6 +684,7 @@ enabled = true
 
 [node name="Floor" type="MeshInstance" parent="Level" index="0"]
 
+editor/display_folded = true
 layers = 1
 material_override = null
 cast_shadow = 1

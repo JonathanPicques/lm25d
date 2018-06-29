@@ -248,6 +248,7 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 
 [node name="HeroSprite" type="Sprite3D" parent="." index="0"]
 
+editor/display_folded = true
 layers = 1
 material_override = SubResource( 1 )
 cast_shadow = 1
@@ -279,6 +280,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Flashlight" type="Spatial" parent="HeroSprite" index="0"]
 
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.58, -0.27, 0 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 

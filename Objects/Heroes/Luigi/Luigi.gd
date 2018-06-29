@@ -92,7 +92,11 @@ func walk(delta):
 		_play_sound_effect(step_sound)
 	if not on_floor:
 		_change_animation_speed(1.0)
+		smoke_particle.emitting = false
 		return set_state(HeroState.fall)
+	elif input_jump and jumps > 0:
+		smoke_particle.emitting = false
+		return set_state(HeroState.jump)
 	elif _is_timer_finished():
 		_change_animation_speed(1.0)
 		return self.set_state(HeroState.walk_2)
