@@ -45,7 +45,7 @@ tracks/2/keys = {
 "values": [ 1 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("HeroSprite/Flashlight Cone:translation")
+tracks/3/path = NodePath("HeroSprite/Flashlight:translation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -54,6 +54,6 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector3( -0.15, -0.48, 0 ) ]
+"values": [ Vector3( 0.58, -0.27, 0 ) ]
 }
 
