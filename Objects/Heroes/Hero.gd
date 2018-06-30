@@ -18,6 +18,7 @@ enum HeroDirection {
 }
 
 const FLOOR_VECTOR = Vector3(0, 1, 0)
+const FLOOR_MAX_ANGLE = cos(deg2rad(45))
 
 var jumps = 0
 
@@ -34,8 +35,9 @@ var direction = HeroDirection.right
 
 var on_wall = false
 var on_floor = false
-var _wall_time = 0
-var _floor_time = 0
+var on_ceiling = false
+var floor_angle = 0
+var floor_velocity = Vector3()
 
 var _every_timer_tag = null
 
@@ -62,15 +64,43 @@ func _process(delta):
 # @param(float) delta
 func _process_velocity(delta):
 	velocity_prev = velocity
-	velocity = move_and_slide(velocity, FLOOR_VECTOR, 0.0)
-	_wall_time -= delta
-	_floor_time -= delta
-	if is_on_wall():
-		_wall_time = 0.1
-	if is_on_floor():
-		_floor_time = 0.1
-	on_wall = _wall_time > 0
-	on_floor = _floor_time > 0
+	velocity = _process_move_slide(delta)
+
+# _process_move_slide
+# @impure
+# @param(float) delta
+func _process_move_slide(delta):
+	on_wall = false
+	on_floor = false
+	on_ceiling = false
+	floor_angle = 0
+	floor_velocity = Vector3()
+	var motion = (velocity + floor_velocity) * delta
+	var linear_velocity = velocity
+	for number_of_slide in range(0, 4):
+		var collision = move_and_collide(motion)
+		if collision:
+			motion = collision.remainder
+			if collision.normal.dot(FLOOR_VECTOR) >= FLOOR_MAX_ANGLE:
+				on_floor = true
+				floor_angle = collision.normal.angle_to(FLOOR_VECTOR)
+				floor_velocity = collision.collider_velocity
+				var relative_velocity = linear_velocity - floor_velocity
+				var horizontal_velocity = relative_velocity - FLOOR_VECTOR * FLOOR_VECTOR.dot(relative_velocity)
+				if collision.travel.length() < 0.05 and horizontal_velocity.length() < 0.001:
+					global_transform.origin -= collision.travel
+					return floor_velocity - FLOOR_VECTOR * FLOOR_VECTOR.dot(floor_velocity)
+			elif collision.normal.dot(-FLOOR_VECTOR) >= FLOOR_MAX_ANGLE:
+				on_ceiling = true
+			else:
+				on_wall = true
+			motion = motion.slide(collision.normal)
+			linear_velocity = linear_velocity.slide(collision.normal)
+			if motion == Vector3():
+				break
+		else:
+			break
+	return linear_velocity
 
 # _start_timer starts a timer for the given duration in seconds.
 # @impure
