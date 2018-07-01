@@ -5,6 +5,7 @@ enum HeroState {
 
 	walk,
 	walk_2,
+	walk_wall,
 	walk_skid,
 	walk_turn,
 
@@ -19,14 +20,16 @@ enum HeroDirection {
 
 const FLOOR_VECTOR = Vector3(0, 1, 0)
 const FLOOR_MAX_ANGLE = cos(deg2rad(45))
+const MOVE_STATE_THRESHOLD = 0.1
 
 var jumps = 0
 
 var state = HeroState.stand
-var state_prev = HeroState.stand
+var state_prev = state
 
 var velocity = Vector3()
 var velocity_prev = velocity
+var velocity_offset = velocity
 
 var input_jump = false
 var input_velocity = Vector3()
@@ -36,6 +39,10 @@ var direction = HeroDirection.right
 var on_wall = false
 var on_floor = false
 var on_ceiling = false
+var _on_wall_threshold = 0
+var _on_floor_threshold = 0
+var _on_ceiling_threshold = 0
+
 var floor_angle = 0
 var floor_velocity = Vector3()
 
@@ -62,17 +69,27 @@ func _process(delta):
 # _process_velocity updates position after velocity is applied.
 # @impure
 # @param(float) delta
-func _process_velocity(delta):
+func process_velocity(delta):
+	var old_translation = translation
 	velocity_prev = velocity
-	velocity = _process_move_slide(delta)
+	velocity = process_move_slide(delta)
+	var offset = translation - old_translation
+	velocity_offset = Vector3(
+		0 if is_nearly(offset.x, 0, 0.001) else velocity.x,
+		0 if is_nearly(offset.y, 0, 0.001) else velocity.y,
+		0 if is_nearly(offset.z, 0, 0.001) else velocity.z
+	)
 
-# _process_move_slide
+# _process_move_slide updates position after velocity and collision are applied.
 # @impure
 # @param(float) delta
-func _process_move_slide(delta):
-	on_wall = false
-	on_floor = false
-	on_ceiling = false
+func process_move_slide(delta):
+	on_wall = _on_wall_threshold > 0
+	on_floor = _on_floor_threshold > 0
+	on_ceiling = _on_ceiling_threshold > 0
+	_on_wall_threshold -= delta
+	_on_floor_threshold -= delta
+	_on_ceiling_threshold -= delta
 	floor_angle = 0
 	floor_velocity = Vector3()
 	var motion = (velocity + floor_velocity) * delta
@@ -82,7 +99,7 @@ func _process_move_slide(delta):
 		if collision:
 			motion = collision.remainder
 			if collision.normal.dot(FLOOR_VECTOR) >= FLOOR_MAX_ANGLE:
-				on_floor = true
+				_on_floor_threshold = MOVE_STATE_THRESHOLD
 				floor_angle = collision.normal.angle_to(FLOOR_VECTOR)
 				floor_velocity = collision.collider_velocity
 				var relative_velocity = linear_velocity - floor_velocity
@@ -90,10 +107,10 @@ func _process_move_slide(delta):
 				if collision.travel.length() < 0.05 and horizontal_velocity.length() < 0.001:
 					global_transform.origin -= collision.travel
 					return floor_velocity - FLOOR_VECTOR * FLOOR_VECTOR.dot(floor_velocity)
-			elif collision.normal.dot(-FLOOR_VECTOR) >= FLOOR_MAX_ANGLE:
-				on_ceiling = true
+			elif collision.normal.dot(-FLOOR_VECTOR) < FLOOR_MAX_ANGLE:
+				_on_wall_threshold = MOVE_STATE_THRESHOLD
 			else:
-				on_wall = true
+				_on_ceiling_threshold = MOVE_STATE_THRESHOLD
 			motion = motion.slide(collision.normal)
 			linear_velocity = linear_velocity.slide(collision.normal)
 			if motion == Vector3():
@@ -105,7 +122,7 @@ func _process_move_slide(delta):
 # _start_timer starts a timer for the given duration in seconds.
 # @impure
 # @param(float) duration
-func _start_timer(duration):
+func start_timer(duration):
 	timer.wait_time = duration
 	timer.start()
 
@@ -113,7 +130,7 @@ func _start_timer(duration):
 # @impure
 # @param(float) seconds
 # @param(string) timer_tag
-func _every_seconds(seconds, timer_tag):
+func every_seconds(seconds, timer_tag):
 	if _every_timer_tag != timer_tag or every_timer.is_stopped():
 		_every_timer_tag = timer_tag
 		every_timer.wait_time = seconds
@@ -124,13 +141,13 @@ func _every_seconds(seconds, timer_tag):
 # _is_timer_over returns true if the timer is finished.
 # @pure
 # @param(float) duration
-func _is_timer_finished():
+func is_timer_finished():
 	return timer.is_stopped()
 
 # _change_direction changes the hero direction and flips the sprite accordingly.
 # @impure
 # @param(float) new_direction
-func _change_direction(new_direction):
+func change_direction(new_direction):
 	direction = new_direction
 	sprite.scale.x = new_direction
 	# sprite.transform = sprite.transform.rotated(Vector3(0.0, 1.0, 0.0), PI)
@@ -138,19 +155,19 @@ func _change_direction(new_direction):
 # _change_animation changes the sprite animation.
 # @impure
 # @param(string) animation
-func _change_animation(animation):
+func change_animation(animation):
 	animation_player.play(animation + " Flashlight" if animation != "Turn" else "Turn")
 
 # _change_animation_speed changes the sprite animation speed.
 # @impure
 # @param(float) speed
-func _change_animation_speed(speed):
+func change_animation_speed(speed):
 	animation_player.playback_speed = speed
 
 # _play_sound_effect plays a sound effect if not already playing (can be forced).
 # @impure
 # @param(AudioStreamSample) stream
-func _play_sound_effect(stream, force = true):
+func play_sound_effect(stream, force = true):
 	if force or not audio_stream_player.is_playing():
 		audio_stream_player.stream = stream
 		audio_stream_player.play()
@@ -159,8 +176,17 @@ func _play_sound_effect(stream, force = true):
 # @pure
 # @param(AudioStreamSample) stream
 # @returns(bool)
-func _is_sound_effect_playing(stream):
+func is_sound_effect_playing(stream):
 	return audio_stream_player.stream == stream and audio_stream_player.is_playing()
+
+# is_nearly returns true if the first given value nearly equals the second given value.
+# @pure
+# @param(float) value1
+# @param(float) value2
+# @param(float) epsilon
+# @returns(bool)
+func is_nearly(value1, value2, epsilon = 0.01):
+	return abs(value1 - value2) < epsilon
 
 # is_moving_x returns true if the given velocity has a non-zero x.
 # @pure
