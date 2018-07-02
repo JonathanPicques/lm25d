@@ -9,9 +9,7 @@
 
 extents = Vector3( 0.620628, 0.284357, 0.381147 )
 
-[node name="Table" type="Spatial" index="0"]
-
-[node name="StaticBody" type="StaticBody" parent="." index="0"]
+[node name="StaticBody" type="StaticBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -22,13 +20,7 @@ bounce = 0.0
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody" index="0"]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.322581, 0 )
-shape = SubResource( 1 )
-disabled = false
-
-[node name="MeshInstance" type="MeshInstance" parent="." index="1"]
+[node name="MeshInstance" type="MeshInstance" parent="." index="0"]
 
 layers = 1
 material_override = null
@@ -44,8 +36,14 @@ skeleton = NodePath("..")
 material/0 = ExtResource( 2 )
 material/1 = ExtResource( 3 )
 material/2 = ExtResource( 4 )
-material/3 = ExtResource( 2 )
+material/3 = ExtResource( 4 )
 material/4 = ExtResource( 4 )
-_sections_unfolded = [ "Transform", "material" ]
+_sections_unfolded = [ "material" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="." index="1"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.322581, 0 )
+shape = SubResource( 1 )
+disabled = false
 
 

@@ -122,28 +122,25 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo" ]
 
-[sub_resource type="BoxShape" id=3]
-
-extents = Vector3( 0.339855, 0.74747, 0.0364697 )
-
-[sub_resource type="Curve" id=4]
+[sub_resource type="Curve" id=8]
 
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
-_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.323616, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.899506, 0 ), 0.0, 0.0, 0, 0 ]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.323616, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.749831, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=5]
+[sub_resource type="CurveTexture" id=9]
 
 flags = 4
 width = 2048
-curve = SubResource( 4 )
+curve = SubResource( 8 )
 
-[sub_resource type="ParticlesMaterial" id=6]
+[sub_resource type="ParticlesMaterial" id=5]
 
 render_priority = 0
 trail_divisor = 1
-emission_shape = 0
+emission_shape = 2
+emission_box_extents = Vector3( 0.2, 0, 0.2 )
 flag_align_y = false
 flag_rotate_y = false
 flag_disable_z = false
@@ -166,7 +163,7 @@ angle = 0.3
 angle_random = 0.0
 scale = 0.4
 scale_random = 0.1
-scale_curve = SubResource( 5 )
+scale_curve = SubResource( 9 )
 color = Color( 1, 1, 1, 1 )
 hue_variation = 0.0
 hue_variation_random = 0.0
@@ -175,6 +172,11 @@ anim_speed_random = 0.0
 anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
+_sections_unfolded = [ "Scale" ]
+
+[sub_resource type="BoxShape" id=6]
+
+extents = Vector3( 0.339855, 0.74747, 0.0364697 )
 
 [sub_resource type="Animation" id=7]
 
@@ -370,12 +372,7 @@ wait_time = 1.0
 one_shot = true
 autostart = false
 
-[node name="CollisionShape" type="CollisionShape" parent="." index="3"]
-
-shape = SubResource( 3 )
-disabled = false
-
-[node name="SmokeParticles" type="Particles" parent="." index="4"]
+[node name="WalkParticles" type="Particles" parent="." index="3"]
 
 transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 0, -0.7, 0 )
 layers = 1
@@ -400,10 +397,15 @@ fract_delta = true
 visibility_aabb = AABB( -4, -4, -4, 8, 8, 8 )
 local_coords = false
 draw_order = 0
-process_material = SubResource( 6 )
+process_material = SubResource( 5 )
 draw_passes = 1
 draw_pass_1 = ExtResource( 6 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+_sections_unfolded = [ "Visibility" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="." index="4"]
+
+shape = SubResource( 6 )
+disabled = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
 

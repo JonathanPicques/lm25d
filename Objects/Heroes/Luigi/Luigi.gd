@@ -77,7 +77,7 @@ var walk_lock_velocity = 0
 var walk_lock_direction = 0
 
 func pre_walk():
-	smoke_particle.emitting = true
+	walk_particles.emitting = true
 	walk_lock_velocity = input_velocity
 	walk_lock_direction = direction
 	start_timer(0.25)
@@ -94,10 +94,10 @@ func walk(delta):
 		play_sound_effect(step_sound)
 	if not on_floor:
 		change_animation_speed(1.0)
-		smoke_particle.emitting = false
+		walk_particles.emitting = false
 		return set_state(HeroState.fall)
 	elif input_jump and jumps > 0:
-		smoke_particle.emitting = false
+		walk_particles.emitting = false
 		return set_state(HeroState.jump)
 	elif is_timer_finished():
 		change_animation_speed(1.0)
@@ -113,19 +113,19 @@ func walk_2(delta):
 	if every_seconds(0.24, "walk"):
 		play_sound_effect(step_sound)
 	if not on_floor:
-		smoke_particle.emitting = false
+		walk_particles.emitting = false
 		return set_state(HeroState.fall)
 	elif on_wall and not is_moving_x(velocity_offset) and not is_moving_z(velocity_offset):
-		smoke_particle.emitting = false
+		walk_particles.emitting = false
 		return set_state(HeroState.walk_wall)
 	elif input_jump and jumps > 0:
-		smoke_particle.emitting = false
+		walk_particles.emitting = false
 		return set_state(HeroState.jump)
 	elif is_moving_direction(-walk_lock_direction, input_velocity):
-		smoke_particle.emitting = false
+		walk_particles.emitting = false
 		return self.set_state(HeroState.walk_turn)
 	elif not is_moving_x(input_velocity) and not is_moving_z(input_velocity):
-		smoke_particle.emitting = false
+		walk_particles.emitting = false
 		return self.set_state(HeroState.walk_skid)
 
 func pre_walk_wall():

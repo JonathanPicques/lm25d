@@ -51,7 +51,7 @@ var _every_timer_tag = null
 onready var timer = $Timer
 onready var sprite = $HeroSprite
 onready var every_timer = $EveryTimer
-onready var smoke_particle = $SmokeParticles
+onready var walk_particles = $WalkParticles
 onready var animation_player = $AnimationPlayer
 onready var audio_stream_player = $AudioStreamPlayer3D
 
