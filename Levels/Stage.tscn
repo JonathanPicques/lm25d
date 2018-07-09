@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Objects/Heroes/Luigi/Luigi.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Decors/Floor/Textures/WoodBoard.png" type="Texture" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://Objects/Decors/Skirting/Textures/WoodCeilingSkirting.png" type="Texture" id=20]
 [ext_resource path="res://Objects/Decors/Skirting/Textures/WoodCeilingSkirting_Normal.png" type="Texture" id=21]
 [ext_resource path="res://Objects/Decors/Chandelier/Chandelier.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Objects/Pickups/Coin/Coin.tscn" type="PackedScene" id=23]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -647,8 +648,6 @@ _sections_unfolded = [ "Albedo", "NormalMap", "UV1" ]
 
 [node name="Hero" type="Spatial" parent="." index="0"]
 
-editor/display_folded = true
-
 [node name="Luigi" parent="Hero" index="0" instance=ExtResource( 1 )]
 
 editor/display_folded = true
@@ -682,8 +681,11 @@ enabled = true
 
 [node name="Level" type="Spatial" parent="." index="1"]
 
+editor/display_folded = true
+
 [node name="Floor" type="MeshInstance" parent="Level" index="0"]
 
+editor/display_folded = true
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -1234,5 +1236,21 @@ omni_attenuation = 1.0
 omni_shadow_mode = 1
 omni_shadow_detail = 1
 _sections_unfolded = [ "Light", "Shadow" ]
+
+[node name="Coin" parent="." index="2" instance=ExtResource( 23 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.77736, 0.298409, 0.646002 )
+
+[node name="Coin2" parent="." index="3" instance=ExtResource( 23 )]
+
+transform = Transform( 0.963642, -0.267195, 0, 0.267195, 0.963642, 0, 0, 0, 1, 3.75896, 0.878976, 0.646002 )
+
+[node name="Coin3" parent="." index="4" instance=ExtResource( 23 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.77736, 0.669337, 0.646002 )
+
+[node name="Coin4" parent="." index="5" instance=ExtResource( 23 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.55916, 0.49396, 0.646002 )
 
 

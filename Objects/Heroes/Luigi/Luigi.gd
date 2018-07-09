@@ -107,7 +107,6 @@ func pre_walk_2():
 	every_seconds(1.0, "r")
 
 func walk_2(delta):
-	print(velocity_offset.x, " and ", velocity_offset.z)
 	velocity = get_movement(delta, velocity, input_velocity, FLOOR_ACC, FLOOR_DEC, FLOOR_MAX_SPEED)
 	velocity = get_gravity_acceleration(delta, velocity, GRAVITY, GRAVITY_MAX_SPEED)
 	if every_seconds(0.24, "walk"):

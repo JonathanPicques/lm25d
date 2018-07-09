@@ -122,18 +122,18 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo" ]
 
-[sub_resource type="Curve" id=8]
+[sub_resource type="Curve" id=3]
 
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
 _data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.323616, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.749831, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=9]
+[sub_resource type="CurveTexture" id=4]
 
 flags = 4
 width = 2048
-curve = SubResource( 8 )
+curve = SubResource( 3 )
 
 [sub_resource type="ParticlesMaterial" id=5]
 
@@ -163,7 +163,7 @@ angle = 0.3
 angle_random = 0.0
 scale = 0.4
 scale_random = 0.1
-scale_curve = SubResource( 9 )
+scale_curve = SubResource( 4 )
 color = Color( 1, 1, 1, 1 )
 hue_variation = 0.0
 hue_variation_random = 0.0
@@ -236,7 +236,7 @@ tracks/3/keys = {
 
 input_ray_pickable = true
 input_capture_on_drag = false
-collision_layer = 1
+collision_layer = 2
 collision_mask = 1
 axis_lock_linear_x = true
 axis_lock_linear_y = false
@@ -246,7 +246,7 @@ axis_lock_angular_y = false
 axis_lock_angular_z = false
 collision/safe_margin = 0.001
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+_sections_unfolded = [ "Transform", "Visibility", "collision" ]
 
 [node name="HeroSprite" type="Sprite3D" parent="." index="0"]
 
