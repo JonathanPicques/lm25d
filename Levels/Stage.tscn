@@ -89,7 +89,7 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "NormalMap", "UV1" ]
 
-[sub_resource type="CubeMesh" id=28]
+[sub_resource type="CubeMesh" id=3]
 
 material = ExtResource( 13 )
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
@@ -98,7 +98,7 @@ subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=4]
 
 render_priority = 0
 flags_transparent = false
@@ -151,13 +151,13 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "UV1" ]
 
-[sub_resource type="QuadMesh" id=4]
+[sub_resource type="QuadMesh" id=5]
 
-material = SubResource( 3 )
+material = SubResource( 4 )
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector2( 30, 0.45 )
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="SpatialMaterial" id=6]
 
 render_priority = 0
 flags_transparent = false
@@ -210,13 +210,13 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "UV1" ]
 
-[sub_resource type="QuadMesh" id=6]
+[sub_resource type="QuadMesh" id=7]
 
-material = SubResource( 5 )
+material = SubResource( 6 )
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector2( 30, 1.5 )
 
-[sub_resource type="SpatialMaterial" id=7]
+[sub_resource type="SpatialMaterial" id=8]
 
 render_priority = 0
 flags_transparent = false
@@ -269,7 +269,7 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "Flags", "Roughness", "UV1" ]
 
-[sub_resource type="CubeMesh" id=8]
+[sub_resource type="CubeMesh" id=9]
 
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector3( 30, 3, 0.8 )
@@ -277,7 +277,7 @@ subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[sub_resource type="SpatialMaterial" id=9]
+[sub_resource type="SpatialMaterial" id=10]
 
 render_priority = 0
 flags_transparent = false
@@ -332,7 +332,7 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Flags", "NormalMap", "UV1" ]
 
-[sub_resource type="CubeMesh" id=10]
+[sub_resource type="CubeMesh" id=11]
 
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector3( 30, 3, 10 )
@@ -340,7 +340,7 @@ subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[sub_resource type="SpatialMaterial" id=11]
+[sub_resource type="SpatialMaterial" id=12]
 
 render_priority = 0
 flags_transparent = false
@@ -393,11 +393,11 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "Roughness", "UV1" ]
 
-[sub_resource type="BoxShape" id=12]
+[sub_resource type="BoxShape" id=13]
 
 extents = Vector3( 15, 0.06, 1 )
 
-[sub_resource type="CubeMesh" id=13]
+[sub_resource type="CubeMesh" id=14]
 
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector3( 30, 6, 0.1 )
@@ -405,7 +405,7 @@ subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[sub_resource type="SpatialMaterial" id=14]
+[sub_resource type="SpatialMaterial" id=15]
 
 render_priority = 0
 flags_transparent = false
@@ -458,7 +458,7 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "UV1" ]
 
-[sub_resource type="CubeMesh" id=15]
+[sub_resource type="CubeMesh" id=16]
 
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector3( 30, 2, 0.1 )
@@ -466,7 +466,7 @@ subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[sub_resource type="SpatialMaterial" id=16]
+[sub_resource type="SpatialMaterial" id=17]
 
 render_priority = 0
 flags_transparent = false
@@ -521,7 +521,7 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "NormalMap", "UV1" ]
 
-[sub_resource type="CubeMesh" id=17]
+[sub_resource type="CubeMesh" id=18]
 
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector3( 30, 2, 0.1 )
@@ -529,7 +529,7 @@ subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[sub_resource type="SpatialMaterial" id=18]
+[sub_resource type="SpatialMaterial" id=19]
 
 render_priority = 0
 flags_transparent = false
@@ -584,15 +584,15 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "NormalMap" ]
 
-[sub_resource type="BoxShape" id=19]
-
-extents = Vector3( 15, 2, 0.1 )
-
 [sub_resource type="BoxShape" id=20]
 
 extents = Vector3( 15, 2, 0.1 )
 
-[sub_resource type="CubeMesh" id=21]
+[sub_resource type="BoxShape" id=21]
+
+extents = Vector3( 15, 2, 0.1 )
+
+[sub_resource type="CubeMesh" id=22]
 
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector3( 30, 3, 2 )
@@ -600,7 +600,7 @@ subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[sub_resource type="SpatialMaterial" id=22]
+[sub_resource type="SpatialMaterial" id=23]
 
 render_priority = 0
 flags_transparent = false
@@ -655,11 +655,10 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "NormalMap", "UV1" ]
 
-[node name="Spatial" type="Spatial" index="0"]
+[node name="Spatial" type="Spatial"]
 
 [node name="Hero" type="Spatial" parent="." index="0"]
 
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00839, 0 )
 
 [node name="Luigi" parent="Hero" index="0" instance=ExtResource( 1 )]
@@ -950,17 +949,17 @@ transform = Transform( 0.999613, 0, 0.0278098, 0, 1, 0, -0.0278098, 0, 0.999613,
 [node name="Flames" parent="Level/Floor/TableFront/Candelabra" index="0" instance=ExtResource( 12 )]
 
 transform = Transform( 0.995104, 0, -0.0988337, 0, 1, 0, 0.0988337, 0, 0.995104, 0.146042, 0.570322, -0.083485 )
-draw_pass_1 = SubResource( 28 )
+draw_pass_1 = SubResource( 3 )
 
 [node name="Flames2" parent="Level/Floor/TableFront/Candelabra" index="1" instance=ExtResource( 12 )]
 
 transform = Transform( 0.995104, 0, -0.0988337, 0, 1, 0, 0.0988337, 0, 0.995104, -0.154116, 0.570322, -0.0967547 )
-draw_pass_1 = SubResource( 28 )
+draw_pass_1 = SubResource( 3 )
 
 [node name="Flames3" parent="Level/Floor/TableFront/Candelabra" index="2" instance=ExtResource( 12 )]
 
 transform = Transform( 0.995104, 0, -0.0988337, 0, 1, 0, 0.0988337, 0, 0.995104, 0.0107632, 0.570322, 0.171548 )
-draw_pass_1 = SubResource( 28 )
+draw_pass_1 = SubResource( 3 )
 
 [node name="OmniLight" type="OmniLight" parent="Level/Floor/TableFront/Candelabra" index="4"]
 
@@ -1001,7 +1000,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 4 )
+mesh = SubResource( 5 )
 skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "Geometry", "Transform" ]
@@ -1018,7 +1017,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 4 )
+mesh = SubResource( 5 )
 skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "Geometry", "Transform" ]
@@ -1035,9 +1034,9 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 6 )
+mesh = SubResource( 7 )
 skeleton = NodePath("..")
-material/0 = SubResource( 7 )
+material/0 = SubResource( 8 )
 _sections_unfolded = [ "Transform", "material" ]
 
 [node name="Brick" type="MeshInstance" parent="Level/Floor" index="14"]
@@ -1052,9 +1051,9 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 8 )
+mesh = SubResource( 9 )
 skeleton = NodePath("..")
-material/0 = SubResource( 9 )
+material/0 = SubResource( 10 )
 _sections_unfolded = [ "Transform", "material" ]
 
 [node name="Dirt" type="MeshInstance" parent="Level/Floor" index="15"]
@@ -1069,9 +1068,9 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 10 )
+mesh = SubResource( 11 )
 skeleton = NodePath("..")
-material/0 = SubResource( 11 )
+material/0 = SubResource( 12 )
 _sections_unfolded = [ "Transform", "material" ]
 
 [node name="FloorStatic" type="StaticBody" parent="Level" index="1"]
@@ -1088,7 +1087,7 @@ constant_angular_velocity = Vector3( 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Level/FloorStatic" index="0"]
 
-shape = SubResource( 12 )
+shape = SubResource( 13 )
 disabled = false
 
 [node name="BackWall" type="MeshInstance" parent="Level" index="2"]
@@ -1104,9 +1103,9 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 13 )
+mesh = SubResource( 14 )
 skeleton = NodePath("..")
-material/0 = SubResource( 14 )
+material/0 = SubResource( 15 )
 _sections_unfolded = [ "Geometry", "Transform", "material" ]
 
 [node name="FramedPortrait" parent="Level/BackWall" index="0" instance=ExtResource( 20 )]
@@ -1176,9 +1175,9 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 15 )
+mesh = SubResource( 16 )
 skeleton = NodePath("..")
-material/0 = SubResource( 16 )
+material/0 = SubResource( 17 )
 _sections_unfolded = [ "Geometry", "Transform", "material" ]
 
 [node name="BackWallSkirting" type="MeshInstance" parent="Level/BackWall" index="3"]
@@ -1193,9 +1192,9 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 17 )
+mesh = SubResource( 18 )
 skeleton = NodePath("..")
-material/0 = SubResource( 18 )
+material/0 = SubResource( 19 )
 _sections_unfolded = [ "Geometry", "Transform", "material" ]
 
 [node name="BackWallStatic" type="StaticBody" parent="Level" index="3"]
@@ -1214,7 +1213,7 @@ constant_angular_velocity = Vector3( 0, 0, 0 )
 [node name="CollisionShape" type="CollisionShape" parent="Level/BackWallStatic" index="0"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.41074e-005, 1.31627, 1.4 )
-shape = SubResource( 19 )
+shape = SubResource( 20 )
 disabled = false
 
 [node name="FrontWallStatic" type="StaticBody" parent="Level" index="4"]
@@ -1233,7 +1232,7 @@ constant_angular_velocity = Vector3( 0, 0, 0 )
 [node name="CollisionShape" type="CollisionShape" parent="Level/FrontWallStatic" index="0"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.41074e-005, 1.31627, 1.4 )
-shape = SubResource( 20 )
+shape = SubResource( 21 )
 disabled = false
 
 [node name="Ceiling" type="MeshInstance" parent="Level" index="5"]
@@ -1249,9 +1248,9 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 21 )
+mesh = SubResource( 22 )
 skeleton = NodePath("..")
-material/0 = SubResource( 22 )
+material/0 = SubResource( 23 )
 _sections_unfolded = [ "Transform", "material" ]
 
 [node name="Chandelier" parent="Level/Ceiling" index="0" instance=ExtResource( 25 )]
