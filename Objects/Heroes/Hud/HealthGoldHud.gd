@@ -1,7 +1,7 @@
 extends Control
 
 var _gold_counter = 0
-export var gold_counter = 43020 setget set_gold_counter, get_gold_counter
+export var gold_counter = 0 setget set_gold_counter, get_gold_counter
 
 var _health_counter = 0
 export var health_counter = 100 setget set_health_counter, get_health_counter
@@ -41,7 +41,8 @@ func appear():
 	if $AnimationPlayer == null:
 		return
 	$VisibilityTimer.start()
-	$AnimationPlayer.play("Appear")
+	if $AnimationPlayer.current_animation != "Appear":
+		$AnimationPlayer.play("Appear")
 
 func _on_VisibilityTimer_timeout():
 	$AnimationPlayer.play("Disappear")

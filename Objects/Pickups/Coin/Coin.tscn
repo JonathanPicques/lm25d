@@ -7,7 +7,9 @@
 
 extents = Vector3( 0.188288, 0.0499105, 0.204947 )
 
-[node name="Coin" type="RigidBody" index="0"]
+[node name="Coin" type="RigidBody" index="0" groups=[
+"Coin",
+]]
 
 input_ray_pickable = true
 input_capture_on_drag = false

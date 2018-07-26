@@ -203,3 +203,10 @@ func fall_to_stand(delta):
 	velocity = get_gravity_acceleration(delta, velocity, GRAVITY, GRAVITY_MAX_SPEED)
 	if is_timer_finished():
 		return self.set_state(HeroState.stand)
+
+func _on_AreaPickup_body_entered(body):
+	if body.is_in_group("Coin"):
+		coins += 1
+		$HudViewport/HealthHud.set_gold_counter(coins)
+		$HudViewport/HealthHud.appear()
+		body.queue_free()

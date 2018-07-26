@@ -23,6 +23,8 @@ const FLOOR_MAX_ANGLE = cos(deg2rad(45))
 const MOVE_STATE_THRESHOLD = 0.1
 
 var jumps = 0
+var coins = 0
+var health = 100
 
 var state = HeroState.stand
 var state_prev = state
