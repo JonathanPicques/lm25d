@@ -655,10 +655,11 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "NormalMap", "UV1" ]
 
-[node name="Spatial" type="Spatial"]
+[node name="Spatial" type="Spatial" index="0"]
 
 [node name="Hero" type="Spatial" parent="." index="0"]
 
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00839, 0 )
 
 [node name="Luigi" parent="Hero" index="0" instance=ExtResource( 1 )]
@@ -692,6 +693,8 @@ speed = 5.0
 enabled = true
 
 [node name="Level" type="Spatial" parent="." index="1"]
+
+editor/display_folded = true
 
 [node name="Floor" type="MeshInstance" parent="Level" index="0"]
 

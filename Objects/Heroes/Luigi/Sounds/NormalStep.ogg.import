@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/NormalStep.ogg-11a472569c69a3a734a624c4987b02bd.oggstr"
+
+[deps]
+
+source_file="res://Objects/Heroes/Luigi/Sounds/NormalStep.ogg"
+dest_files=[ "res://.import/NormalStep.ogg-11a472569c69a3a734a624c4987b02bd.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

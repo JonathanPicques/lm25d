@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Turn.ogg-20c2001bd84795e51b97940b57ae2395.oggstr"
+
+[deps]
+
+source_file="res://Objects/Heroes/Luigi/Sounds/Turn.ogg"
+dest_files=[ "res://.import/Turn.ogg-20c2001bd84795e51b97940b57ae2395.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -14,9 +14,10 @@ const AIRBORNE_ACC = Vector3(3.5, 0.0, 3.0)
 const AIRBORNE_DEC = Vector3(6.0, 0.0, 4.5)
 const AIRBORNE_MAX_SPEED = Vector3(3.2, 0.0, 2.4)
 
-var jump_sound = preload("res://Audio/Sounds/Jump.ogg")
-var turn_sound = preload("res://Audio/Sounds/Turn.ogg")
-var step_sound = preload("res://Audio/Sounds/NormalStep.ogg")
+var jump_sound = preload("./Sounds/Jump.ogg")
+var turn_sound = preload("./Sounds/Turn.ogg")
+var step_sound = preload("./Sounds/NormalStep.ogg")
+var coin_sound = preload("../../Pickups/Coin/Sounds/Coin.ogg")
 
 # Hero update loop
 # ---
@@ -207,6 +208,7 @@ func fall_to_stand(delta):
 func _on_AreaPickup_body_entered(body):
 	if body.is_in_group("Coin"):
 		coins += 1
-		$HudViewport/HealthHud.set_gold_counter(coins)
-		$HudViewport/HealthHud.appear()
 		body.queue_free()
+		play_sound_effect(coin_sound)
+		$HudViewport/HealthHud.appear()
+		$HudViewport/HealthHud.set_gold_counter(coins)
