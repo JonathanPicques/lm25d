@@ -68,7 +68,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
 _sections_unfolded = [ "Visibility" ]
-gold_counter = 43020
+gold_counter = 0
 health_counter = 100
 
 [node name="HealthHearts" type="TextureRect" parent="." index="0"]
@@ -173,13 +173,14 @@ autostart = false
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
 
 root_node = NodePath("..")
-autoplay = ""
+autoplay = "Appear"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
 anims/Appear = SubResource( 2 )
 anims/Disappear = SubResource( 3 )
 blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
 
 [connection signal="timeout" from="VisibilityTimer" to="." method="_on_VisibilityTimer_timeout"]
 

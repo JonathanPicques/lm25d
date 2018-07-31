@@ -207,8 +207,7 @@ func fall_to_stand(delta):
 
 func _on_AreaPickup_body_entered(body):
 	if body.is_in_group("Coin"):
-		coins += 1
+		coins += 10
 		body.queue_free()
 		play_sound_effect(coin_sound)
-		$HudViewport/HealthHud.appear()
 		$HudViewport/HealthHud.set_gold_counter(coins)
