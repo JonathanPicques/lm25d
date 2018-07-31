@@ -55,7 +55,7 @@ onready var sprite = $HeroSprite
 onready var every_timer = $EveryTimer
 onready var walk_particles = $WalkParticles
 onready var animation_player = $AnimationPlayer
-onready var audio_stream_player = $AudioStreamPlayer3D
+onready var sound_effect_players = [$SoundEffects/SFX1, $SoundEffects/SFX2, $SoundEffects/SFX3, $SoundEffects/SFX4]
 
 # _process updates input.
 # @impure
@@ -68,7 +68,7 @@ func _process(delta):
 	input_jump = Input.is_action_just_pressed("player_jump")
 	input_velocity = Vector3(right - left, input_velocity.y, down - up)
 
-# _process_velocity updates position after velocity is applied.
+# process_velocity updates position after velocity is applied.
 # @impure
 # @param(float) delta
 func process_velocity(delta):
@@ -82,7 +82,7 @@ func process_velocity(delta):
 		0 if is_nearly(offset.z, 0, 0.001) else velocity.z
 	)
 
-# _process_move_slide updates position after velocity and collision are applied.
+# process_move_slide updates position after velocity and collisions are applied.
 # @impure
 # @param(float) delta
 func process_move_slide(delta):
@@ -121,14 +121,14 @@ func process_move_slide(delta):
 			break
 	return linear_velocity
 
-# _start_timer starts a timer for the given duration in seconds.
+# start_timer starts a timer for the given duration in seconds.
 # @impure
 # @param(float) duration
 func start_timer(duration):
 	timer.wait_time = duration
 	timer.start()
 
-# _every_seconds returns true every given seconds.
+# every_seconds returns true every given seconds.
 # @impure
 # @param(float) seconds
 # @param(string) timer_tag
@@ -140,13 +140,13 @@ func every_seconds(seconds, timer_tag):
 		return true
 	return false
 
-# _is_timer_over returns true if the timer is finished.
+# is_timer_finished returns true if the timer is finished.
 # @pure
 # @param(float) duration
 func is_timer_finished():
 	return timer.is_stopped()
 
-# _change_direction changes the hero direction and flips the sprite accordingly.
+# change_direction changes the hero direction and flips the sprite accordingly.
 # @impure
 # @param(float) new_direction
 func change_direction(new_direction):
@@ -154,32 +154,45 @@ func change_direction(new_direction):
 	sprite.scale.x = new_direction
 	# sprite.transform = sprite.transform.rotated(Vector3(0.0, 1.0, 0.0), PI)
 
-# _change_animation changes the sprite animation.
+# change_animation changes the sprite animation.
 # @impure
 # @param(string) animation
 func change_animation(animation):
 	animation_player.play(animation + " Flashlight" if animation != "Turn" else "Turn")
 
-# _change_animation_speed changes the sprite animation speed.
+# change_animation_speed changes the sprite animation speed.
 # @impure
 # @param(float) speed
 func change_animation_speed(speed):
 	animation_player.playback_speed = speed
 
-# _play_sound_effect plays a sound effect if not already playing (can be forced).
+# play_sound_effect plays a sound effect.
 # @impure
 # @param(AudioStreamSample) stream
-func play_sound_effect(stream, force = true):
-	if force or not audio_stream_player.is_playing():
-		audio_stream_player.stream = stream
-		audio_stream_player.play()
+func play_sound_effect(stream):
+	var sound_effect_player = get_available_sound_effect_player()
+	if sound_effect_player != null:
+		sound_effect_player.stream = stream
+		sound_effect_player.play()
 
-# _sound_effect_playing returns true if the given stream is playing.
+# is_sound_effect_playing returns true if the given stream is playing.
 # @pure
 # @param(AudioStreamSample) stream
 # @returns(bool)
 func is_sound_effect_playing(stream):
-	return audio_stream_player.stream == stream and audio_stream_player.is_playing()
+	for sound_effect_player in sound_effect_players:
+		if sound_effect_player.stream == stream and sound_effect_player.is_playing():
+			return true
+	return false
+
+# get_available_sound_effect_player returns the next available (non-playing) audio stream for sound effects or null.
+# @pure
+# @returns(AudioStreamPlayer3D)
+func get_available_sound_effect_player():
+	for sound_effect_player in sound_effect_players:
+		if not sound_effect_player.is_playing():
+			return sound_effect_player
+	return null
 
 # is_nearly returns true if the first given value nearly equals the second given value.
 # @pure

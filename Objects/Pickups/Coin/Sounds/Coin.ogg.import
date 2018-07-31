@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Coin.ogg-0ff5e33d04a63399afdcb5932c42a46d.oggstr" ]
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
