@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/bone_saw.obj-ba8d57732750b627f02af743fb17cdf4.mesh"
+
+[deps]
+
+files=[ "res://.import/bone_saw.obj-ba8d57732750b627f02af743fb17cdf4.mesh" ]
+
+source_file="res://Objects/Decors/Haunted Mansion/Models/bone_saw.obj"
+dest_files=[ "res://.import/bone_saw.obj-ba8d57732750b627f02af743fb17cdf4.mesh", "res://.import/bone_saw.obj-ba8d57732750b627f02af743fb17cdf4.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

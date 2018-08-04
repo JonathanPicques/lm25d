@@ -1,0 +1,30 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/Car.png-7d40ec5f2c1c62c9cf78e20863526c43.s3tc.stex"
+path.etc2="res://.import/Car.png-7d40ec5f2c1c62c9cf78e20863526c43.etc2.stex"
+
+[deps]
+
+source_file="res://Objects/Decors/Luigi's Mansion/Car/Textures/Car.png"
+dest_files=[ "res://.import/Car.png-7d40ec5f2c1c62c9cf78e20863526c43.s3tc.stex", "res://.import/Car.png-7d40ec5f2c1c62c9cf78e20863526c43.etc2.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=true
+flags/filter=true
+flags/mipmaps=true
+flags/anisotropic=false
+flags/srgb=1
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

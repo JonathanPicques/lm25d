@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/oil_lamp_chandelier_02.obj-bd35e4947c7b62e95ca0f9f5fb870819.mesh"
+
+[deps]
+
+files=[ "res://.import/oil_lamp_chandelier_02.obj-bd35e4947c7b62e95ca0f9f5fb870819.mesh" ]
+
+source_file="res://Objects/Decors/Haunted Mansion/Models/oil_lamp_chandelier_02.obj"
+dest_files=[ "res://.import/oil_lamp_chandelier_02.obj-bd35e4947c7b62e95ca0f9f5fb870819.mesh", "res://.import/oil_lamp_chandelier_02.obj-bd35e4947c7b62e95ca0f9f5fb870819.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

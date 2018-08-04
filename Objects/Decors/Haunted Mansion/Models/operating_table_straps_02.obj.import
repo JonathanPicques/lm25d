@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/operating_table_straps_02.obj-20f1da10a4f7481517fb92c4fe5b019e.mesh"
+
+[deps]
+
+files=[ "res://.import/operating_table_straps_02.obj-20f1da10a4f7481517fb92c4fe5b019e.mesh" ]
+
+source_file="res://Objects/Decors/Haunted Mansion/Models/operating_table_straps_02.obj"
+dest_files=[ "res://.import/operating_table_straps_02.obj-20f1da10a4f7481517fb92c4fe5b019e.mesh", "res://.import/operating_table_straps_02.obj-20f1da10a4f7481517fb92c4fe5b019e.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

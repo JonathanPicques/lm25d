@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/floor_1x1_3.obj-3bf1812b04a27c2f4e193c93c838939f.mesh"
+
+[deps]
+
+files=[ "res://.import/floor_1x1_3.obj-3bf1812b04a27c2f4e193c93c838939f.mesh" ]
+
+source_file="res://Objects/Decors/Haunted Mansion/Models/floor_1x1_3.obj"
+dest_files=[ "res://.import/floor_1x1_3.obj-3bf1812b04a27c2f4e193c93c838939f.mesh", "res://.import/floor_1x1_3.obj-3bf1812b04a27c2f4e193c93c838939f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

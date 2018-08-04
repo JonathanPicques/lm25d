@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/shelf_corner_broken_01.obj-0b83c50108b6410b6f20cfae7e260a57.mesh"
+
+[deps]
+
+files=[ "res://.import/shelf_corner_broken_01.obj-0b83c50108b6410b6f20cfae7e260a57.mesh" ]
+
+source_file="res://Objects/Decors/Haunted Mansion/Models/shelf_corner_broken_01.obj"
+dest_files=[ "res://.import/shelf_corner_broken_01.obj-0b83c50108b6410b6f20cfae7e260a57.mesh", "res://.import/shelf_corner_broken_01.obj-0b83c50108b6410b6f20cfae7e260a57.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

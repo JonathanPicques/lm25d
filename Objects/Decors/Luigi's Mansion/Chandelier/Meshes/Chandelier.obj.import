@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Chandelier.obj-a838ff68e0f678c6f88c763db2d633c3.mesh"
+
+[deps]
+
+files=[ "res://.import/Chandelier.obj-a838ff68e0f678c6f88c763db2d633c3.mesh" ]
+
+source_file="res://Objects/Decors/Luigi's Mansion/Chandelier/Meshes/Chandelier.obj"
+dest_files=[ "res://.import/Chandelier.obj-a838ff68e0f678c6f88c763db2d633c3.mesh", "res://.import/Chandelier.obj-a838ff68e0f678c6f88c763db2d633c3.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

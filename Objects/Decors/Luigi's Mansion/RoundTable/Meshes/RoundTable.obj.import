@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/RoundTable.obj-1d274c33e3191c33d6b1ee87dab81d81.mesh"
+
+[deps]
+
+files=[ "res://.import/RoundTable.obj-1d274c33e3191c33d6b1ee87dab81d81.mesh" ]
+
+source_file="res://Objects/Decors/Luigi's Mansion/RoundTable/Meshes/RoundTable.obj"
+dest_files=[ "res://.import/RoundTable.obj-1d274c33e3191c33d6b1ee87dab81d81.mesh", "res://.import/RoundTable.obj-1d274c33e3191c33d6b1ee87dab81d81.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/stair_1_tile.obj-300d940db9b45a870fcd468dd5a786a3.mesh"
+
+[deps]
+
+files=[ "res://.import/stair_1_tile.obj-300d940db9b45a870fcd468dd5a786a3.mesh" ]
+
+source_file="res://Objects/Decors/Haunted Mansion/Models/stair_1_tile.obj"
+dest_files=[ "res://.import/stair_1_tile.obj-300d940db9b45a870fcd468dd5a786a3.mesh", "res://.import/stair_1_tile.obj-300d940db9b45a870fcd468dd5a786a3.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

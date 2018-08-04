@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/vial_small_03.obj-e610eeddeee6f6ca920e3f347714275e.mesh"
+
+[deps]
+
+files=[ "res://.import/vial_small_03.obj-e610eeddeee6f6ca920e3f347714275e.mesh" ]
+
+source_file="res://Objects/Decors/Haunted Mansion/Models/vial_small_03.obj"
+dest_files=[ "res://.import/vial_small_03.obj-e610eeddeee6f6ca920e3f347714275e.mesh", "res://.import/vial_small_03.obj-e610eeddeee6f6ca920e3f347714275e.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

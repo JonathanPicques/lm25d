@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/rug_small_v2.obj-5aeeccf4d29190c67d7664ed5328e036.mesh"
+
+[deps]
+
+files=[ "res://.import/rug_small_v2.obj-5aeeccf4d29190c67d7664ed5328e036.mesh" ]
+
+source_file="res://Objects/Decors/Haunted Mansion/Models/rug_small_v2.obj"
+dest_files=[ "res://.import/rug_small_v2.obj-5aeeccf4d29190c67d7664ed5328e036.mesh", "res://.import/rug_small_v2.obj-5aeeccf4d29190c67d7664ed5328e036.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

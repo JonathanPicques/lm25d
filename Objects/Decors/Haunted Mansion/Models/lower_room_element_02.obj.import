@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/lower_room_element_02.obj-17e3a10090975eaa1024adbc618455a6.mesh"
+
+[deps]
+
+files=[ "res://.import/lower_room_element_02.obj-17e3a10090975eaa1024adbc618455a6.mesh" ]
+
+source_file="res://Objects/Decors/Haunted Mansion/Models/lower_room_element_02.obj"
+dest_files=[ "res://.import/lower_room_element_02.obj-17e3a10090975eaa1024adbc618455a6.mesh", "res://.import/lower_room_element_02.obj-17e3a10090975eaa1024adbc618455a6.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Candelabra.obj-e36fcca1fba62c2ebebf22abf0fb7c55.mesh"
+
+[deps]
+
+files=[ "res://.import/Candelabra.obj-e36fcca1fba62c2ebebf22abf0fb7c55.mesh" ]
+
+source_file="res://Objects/Decors/Luigi's Mansion/Candelabra/Meshes/Candelabra.obj"
+dest_files=[ "res://.import/Candelabra.obj-e36fcca1fba62c2ebebf22abf0fb7c55.mesh", "res://.import/Candelabra.obj-e36fcca1fba62c2ebebf22abf0fb7c55.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

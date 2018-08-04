@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/hand02.obj-0d5d2c4114481f9fed8d7a9fc331c6de.mesh"
+
+[deps]
+
+files=[ "res://.import/hand02.obj-0d5d2c4114481f9fed8d7a9fc331c6de.mesh" ]
+
+source_file="res://Objects/Decors/Haunted Mansion/Models/hand02.obj"
+dest_files=[ "res://.import/hand02.obj-0d5d2c4114481f9fed8d7a9fc331c6de.mesh", "res://.import/hand02.obj-0d5d2c4114481f9fed8d7a9fc331c6de.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

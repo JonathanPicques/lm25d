@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/jar_06_liquid.obj-13616868327a01010a6f19696aaa3a1d.mesh"
+
+[deps]
+
+files=[ "res://.import/jar_06_liquid.obj-13616868327a01010a6f19696aaa3a1d.mesh" ]
+
+source_file="res://Objects/Decors/Haunted Mansion/Models/jar_06_liquid.obj"
+dest_files=[ "res://.import/jar_06_liquid.obj-13616868327a01010a6f19696aaa3a1d.mesh", "res://.import/jar_06_liquid.obj-13616868327a01010a6f19696aaa3a1d.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

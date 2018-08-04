@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/kitchen_spoon_v2.obj-9a94733f35a5a32cd0db1ae0bffbad4e.mesh"
+
+[deps]
+
+files=[ "res://.import/kitchen_spoon_v2.obj-9a94733f35a5a32cd0db1ae0bffbad4e.mesh" ]
+
+source_file="res://Objects/Decors/Haunted Mansion/Models/kitchen_spoon_v2.obj"
+dest_files=[ "res://.import/kitchen_spoon_v2.obj-9a94733f35a5a32cd0db1ae0bffbad4e.mesh", "res://.import/kitchen_spoon_v2.obj-9a94733f35a5a32cd0db1ae0bffbad4e.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

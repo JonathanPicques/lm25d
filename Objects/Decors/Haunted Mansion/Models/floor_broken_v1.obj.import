@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/floor_broken_v1.obj-dbeb19ff3bdb95f6b2e5acf26b5ee660.mesh"
+
+[deps]
+
+files=[ "res://.import/floor_broken_v1.obj-dbeb19ff3bdb95f6b2e5acf26b5ee660.mesh" ]
+
+source_file="res://Objects/Decors/Haunted Mansion/Models/floor_broken_v1.obj"
+dest_files=[ "res://.import/floor_broken_v1.obj-dbeb19ff3bdb95f6b2e5acf26b5ee660.mesh", "res://.import/floor_broken_v1.obj-dbeb19ff3bdb95f6b2e5acf26b5ee660.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/cauldron_small_arm.obj-9ed05cb9884681b3fd1b5dd7f441bf0f.mesh"
+
+[deps]
+
+files=[ "res://.import/cauldron_small_arm.obj-9ed05cb9884681b3fd1b5dd7f441bf0f.mesh" ]
+
+source_file="res://Objects/Decors/Haunted Mansion/Models/cauldron_small_arm.obj"
+dest_files=[ "res://.import/cauldron_small_arm.obj-9ed05cb9884681b3fd1b5dd7f441bf0f.mesh", "res://.import/cauldron_small_arm.obj-9ed05cb9884681b3fd1b5dd7f441bf0f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

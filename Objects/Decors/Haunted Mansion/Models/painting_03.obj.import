@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/painting_03.obj-4e6bdc6a2489154ec0728752e05c724d.mesh"
+
+[deps]
+
+files=[ "res://.import/painting_03.obj-4e6bdc6a2489154ec0728752e05c724d.mesh" ]
+
+source_file="res://Objects/Decors/Haunted Mansion/Models/painting_03.obj"
+dest_files=[ "res://.import/painting_03.obj-4e6bdc6a2489154ec0728752e05c724d.mesh", "res://.import/painting_03.obj-4e6bdc6a2489154ec0728752e05c724d.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

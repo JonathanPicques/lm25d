@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/stair_1_side_tile_pillar_top.obj-3ad2264399e2df80b0898b83f296bcb9.mesh"
+
+[deps]
+
+files=[ "res://.import/stair_1_side_tile_pillar_top.obj-3ad2264399e2df80b0898b83f296bcb9.mesh" ]
+
+source_file="res://Objects/Decors/Haunted Mansion/Models/stair_1_side_tile_pillar_top.obj"
+dest_files=[ "res://.import/stair_1_side_tile_pillar_top.obj-3ad2264399e2df80b0898b83f296bcb9.mesh", "res://.import/stair_1_side_tile_pillar_top.obj-3ad2264399e2df80b0898b83f296bcb9.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

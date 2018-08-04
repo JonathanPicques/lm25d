@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/paper_torn_02.obj-eac909d88987ee09dd62f1dcbcec195d.mesh"
+
+[deps]
+
+files=[ "res://.import/paper_torn_02.obj-eac909d88987ee09dd62f1dcbcec195d.mesh" ]
+
+source_file="res://Objects/Decors/Haunted Mansion/Models/paper_torn_02.obj"
+dest_files=[ "res://.import/paper_torn_02.obj-eac909d88987ee09dd62f1dcbcec195d.mesh", "res://.import/paper_torn_02.obj-eac909d88987ee09dd62f1dcbcec195d.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

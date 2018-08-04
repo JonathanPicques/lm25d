@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/pillar_wood_left.obj-f9c7ff936814b8415cc5ec3a32ae457d.mesh"
+
+[deps]
+
+files=[ "res://.import/pillar_wood_left.obj-f9c7ff936814b8415cc5ec3a32ae457d.mesh" ]
+
+source_file="res://Objects/Decors/Haunted Mansion/Models/pillar_wood_left.obj"
+dest_files=[ "res://.import/pillar_wood_left.obj-f9c7ff936814b8415cc5ec3a32ae457d.mesh", "res://.import/pillar_wood_left.obj-f9c7ff936814b8415cc5ec3a32ae457d.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

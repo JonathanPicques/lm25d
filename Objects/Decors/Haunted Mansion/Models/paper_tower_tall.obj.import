@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/paper_tower_tall.obj-8875f6a3ed5db99a290f56093bcbbc3e.mesh"
+
+[deps]
+
+files=[ "res://.import/paper_tower_tall.obj-8875f6a3ed5db99a290f56093bcbbc3e.mesh" ]
+
+source_file="res://Objects/Decors/Haunted Mansion/Models/paper_tower_tall.obj"
+dest_files=[ "res://.import/paper_tower_tall.obj-8875f6a3ed5db99a290f56093bcbbc3e.mesh", "res://.import/paper_tower_tall.obj-8875f6a3ed5db99a290f56093bcbbc3e.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

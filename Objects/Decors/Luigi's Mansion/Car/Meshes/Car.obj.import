@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Car.obj-a3dbffcfcb5f87727d2f2f4140cf0b4a.mesh"
+
+[deps]
+
+files=[ "res://.import/Car.obj-a3dbffcfcb5f87727d2f2f4140cf0b4a.mesh" ]
+
+source_file="res://Objects/Decors/Luigi's Mansion/Car/Meshes/Car.obj"
+dest_files=[ "res://.import/Car.obj-a3dbffcfcb5f87727d2f2f4140cf0b4a.mesh", "res://.import/Car.obj-a3dbffcfcb5f87727d2f2f4140cf0b4a.mesh" ]
+
+[params]
+
+generate_tangents=false
+scale_mesh=Vector3( 0.005, 0.005, 0.005 )

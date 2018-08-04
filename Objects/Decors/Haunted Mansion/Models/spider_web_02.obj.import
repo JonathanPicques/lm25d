@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/spider_web_02.obj-725abb1dc8818de7ac2491f3cc20bb72.mesh"
+
+[deps]
+
+files=[ "res://.import/spider_web_02.obj-725abb1dc8818de7ac2491f3cc20bb72.mesh" ]
+
+source_file="res://Objects/Decors/Haunted Mansion/Models/spider_web_02.obj"
+dest_files=[ "res://.import/spider_web_02.obj-725abb1dc8818de7ac2491f3cc20bb72.mesh", "res://.import/spider_web_02.obj-725abb1dc8818de7ac2491f3cc20bb72.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

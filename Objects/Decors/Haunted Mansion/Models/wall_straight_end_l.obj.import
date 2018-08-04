@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/wall_straight_end_l.obj-8b48daa953dd5ac9de840bcde2e46af2.mesh"
+
+[deps]
+
+files=[ "res://.import/wall_straight_end_l.obj-8b48daa953dd5ac9de840bcde2e46af2.mesh" ]
+
+source_file="res://Objects/Decors/Haunted Mansion/Models/wall_straight_end_l.obj"
+dest_files=[ "res://.import/wall_straight_end_l.obj-8b48daa953dd5ac9de840bcde2e46af2.mesh", "res://.import/wall_straight_end_l.obj-8b48daa953dd5ac9de840bcde2e46af2.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Table.obj-941d6b2d7bd2c7b8f581e7983fc78e62.mesh"
+
+[deps]
+
+files=[ "res://.import/Table.obj-941d6b2d7bd2c7b8f581e7983fc78e62.mesh" ]
+
+source_file="res://Objects/Decors/Luigi's Mansion/Table/Meshes/Table.obj"
+dest_files=[ "res://.import/Table.obj-941d6b2d7bd2c7b8f581e7983fc78e62.mesh", "res://.import/Table.obj-941d6b2d7bd2c7b8f581e7983fc78e62.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/BroomBasin.obj-0a659b58b33f6de321289c4b88a608f7.mesh"
+
+[deps]
+
+files=[ "res://.import/BroomBasin.obj-0a659b58b33f6de321289c4b88a608f7.mesh" ]
+
+source_file="res://Objects/Decors/Luigi's Mansion/BroomBasin/Meshes/BroomBasin.obj"
+dest_files=[ "res://.import/BroomBasin.obj-0a659b58b33f6de321289c4b88a608f7.mesh", "res://.import/BroomBasin.obj-0a659b58b33f6de321289c4b88a608f7.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

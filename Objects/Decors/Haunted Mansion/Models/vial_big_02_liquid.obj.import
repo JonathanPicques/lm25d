@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/vial_big_02_liquid.obj-ae5190dd4f2e77261c8d6eea1c05102d.mesh"
+
+[deps]
+
+files=[ "res://.import/vial_big_02_liquid.obj-ae5190dd4f2e77261c8d6eea1c05102d.mesh" ]
+
+source_file="res://Objects/Decors/Haunted Mansion/Models/vial_big_02_liquid.obj"
+dest_files=[ "res://.import/vial_big_02_liquid.obj-ae5190dd4f2e77261c8d6eea1c05102d.mesh", "res://.import/vial_big_02_liquid.obj-ae5190dd4f2e77261c8d6eea1c05102d.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

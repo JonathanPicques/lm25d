@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/boiler_oil.obj-1f286f3a81afa0e181448641b3199186.mesh"
+
+[deps]
+
+files=[ "res://.import/boiler_oil.obj-1f286f3a81afa0e181448641b3199186.mesh" ]
+
+source_file="res://Objects/Decors/Haunted Mansion/Models/boiler_oil.obj"
+dest_files=[ "res://.import/boiler_oil.obj-1f286f3a81afa0e181448641b3199186.mesh", "res://.import/boiler_oil.obj-1f286f3a81afa0e181448641b3199186.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

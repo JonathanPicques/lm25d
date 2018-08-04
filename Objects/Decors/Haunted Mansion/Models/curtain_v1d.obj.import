@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/curtain_v1d.obj-16fd758aab678c5965aad466aea9206b.mesh"
+
+[deps]
+
+files=[ "res://.import/curtain_v1d.obj-16fd758aab678c5965aad466aea9206b.mesh" ]
+
+source_file="res://Objects/Decors/Haunted Mansion/Models/curtain_v1d.obj"
+dest_files=[ "res://.import/curtain_v1d.obj-16fd758aab678c5965aad466aea9206b.mesh", "res://.import/curtain_v1d.obj-16fd758aab678c5965aad466aea9206b.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

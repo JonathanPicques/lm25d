@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/oil_lamp_01_glass.obj-e6097f9d22d3e66d46c05a191ac3aec9.mesh"
+
+[deps]
+
+files=[ "res://.import/oil_lamp_01_glass.obj-e6097f9d22d3e66d46c05a191ac3aec9.mesh" ]
+
+source_file="res://Objects/Decors/Haunted Mansion/Models/oil_lamp_01_glass.obj"
+dest_files=[ "res://.import/oil_lamp_01_glass.obj-e6097f9d22d3e66d46c05a191ac3aec9.mesh", "res://.import/oil_lamp_01_glass.obj-e6097f9d22d3e66d46c05a191ac3aec9.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

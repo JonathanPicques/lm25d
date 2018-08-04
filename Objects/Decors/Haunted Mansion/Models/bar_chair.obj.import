@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/bar_chair.obj-0a9d36e7289b6c7c7b192b73b42e9a1f.mesh"
+
+[deps]
+
+files=[ "res://.import/bar_chair.obj-0a9d36e7289b6c7c7b192b73b42e9a1f.mesh" ]
+
+source_file="res://Objects/Decors/Haunted Mansion/Models/bar_chair.obj"
+dest_files=[ "res://.import/bar_chair.obj-0a9d36e7289b6c7c7b192b73b42e9a1f.mesh", "res://.import/bar_chair.obj-0a9d36e7289b6c7c7b192b73b42e9a1f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

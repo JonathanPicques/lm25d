@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/cabinet_drawer_02.obj-f14b5cf73998d597a1fe026aebc37990.mesh"
+
+[deps]
+
+files=[ "res://.import/cabinet_drawer_02.obj-f14b5cf73998d597a1fe026aebc37990.mesh" ]
+
+source_file="res://Objects/Decors/Haunted Mansion/Models/cabinet_drawer_02.obj"
+dest_files=[ "res://.import/cabinet_drawer_02.obj-f14b5cf73998d597a1fe026aebc37990.mesh", "res://.import/cabinet_drawer_02.obj-f14b5cf73998d597a1fe026aebc37990.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

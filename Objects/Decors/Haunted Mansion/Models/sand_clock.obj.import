@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/sand_clock.obj-18f37420c4d3eef40c994937b3bdd3f1.mesh"
+
+[deps]
+
+files=[ "res://.import/sand_clock.obj-18f37420c4d3eef40c994937b3bdd3f1.mesh" ]
+
+source_file="res://Objects/Decors/Haunted Mansion/Models/sand_clock.obj"
+dest_files=[ "res://.import/sand_clock.obj-18f37420c4d3eef40c994937b3bdd3f1.mesh", "res://.import/sand_clock.obj-18f37420c4d3eef40c994937b3bdd3f1.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

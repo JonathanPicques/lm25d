@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/clamp_01.obj-2c9d93e2cb741d518ecbb8b78029ce69.mesh"
+
+[deps]
+
+files=[ "res://.import/clamp_01.obj-2c9d93e2cb741d518ecbb8b78029ce69.mesh" ]
+
+source_file="res://Objects/Decors/Haunted Mansion/Models/clamp_01.obj"
+dest_files=[ "res://.import/clamp_01.obj-2c9d93e2cb741d518ecbb8b78029ce69.mesh", "res://.import/clamp_01.obj-2c9d93e2cb741d518ecbb8b78029ce69.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

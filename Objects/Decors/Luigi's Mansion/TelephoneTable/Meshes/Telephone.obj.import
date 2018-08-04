@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Telephone.obj-73c62cc82b7ee849774a7f6b03f30d3d.mesh"
+
+[deps]
+
+files=[ "res://.import/Telephone.obj-73c62cc82b7ee849774a7f6b03f30d3d.mesh" ]
+
+source_file="res://Objects/Decors/Luigi's Mansion/TelephoneTable/Meshes/Telephone.obj"
+dest_files=[ "res://.import/Telephone.obj-73c62cc82b7ee849774a7f6b03f30d3d.mesh", "res://.import/Telephone.obj-73c62cc82b7ee849774a7f6b03f30d3d.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
