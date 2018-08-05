@@ -242,8 +242,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Level" type="Spatial" parent="." index="1"]
 
-editor/display_folded = true
-
 [node name="Entrance" type="Spatial" parent="Level" index="0"]
 
 [node name="Ceiling" type="Spatial" parent="Level/Entrance" index="0"]
@@ -313,15 +311,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 0.2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="OilLampWall" type="Spatial" parent="Level/Entrance/First Floor/Wall/WallStraight5" index="2" instance=ExtResource( 7 )]
+[node name="OilLampWall" parent="Level/Entrance/First Floor/Wall/WallStraight5" index="2" instance=ExtResource( 7 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3, 0.2 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="OilLampWall2" type="Spatial" parent="Level/Entrance/First Floor/Wall/WallStraight5" index="3" instance=ExtResource( 7 )]
+[node name="OilLampWall2" parent="Level/Entrance/First Floor/Wall/WallStraight5" index="3" instance=ExtResource( 7 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 0.2 )
-_sections_unfolded = [ "Transform" ]
 
 [node name="WallArch2" parent="Level/Entrance/First Floor/Wall" index="5" instance=ExtResource( 8 )]
 
@@ -341,32 +337,27 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3, 0.2 )
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8, 3, 0.2 )
 
-[node name="WallStraight3" parent="Level/Entrance/First Floor/Wall" index="7" instance=ExtResource( 4 )]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="PillarWoodLeft" parent="Level/Entrance/First Floor/Wall" index="8" instance=ExtResource( 9 )]
+[node name="PillarWoodLeft" parent="Level/Entrance/First Floor/Wall" index="7" instance=ExtResource( 9 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 9.53674e-007, 0.000558019 )
 
-[node name="PillarWoodLeft2" parent="Level/Entrance/First Floor/Wall" index="9" instance=ExtResource( 9 )]
+[node name="PillarWoodLeft2" parent="Level/Entrance/First Floor/Wall" index="8" instance=ExtResource( 9 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 9.53674e-007, 0.000558019 )
 
-[node name="PillarWoodLeft3" parent="Level/Entrance/First Floor/Wall" index="10" instance=ExtResource( 9 )]
+[node name="PillarWoodLeft3" parent="Level/Entrance/First Floor/Wall" index="9" instance=ExtResource( 9 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 9.53674e-007, -3.99944 )
 
-[node name="PillarWoodLeft4" parent="Level/Entrance/First Floor/Wall" index="11" instance=ExtResource( 9 )]
+[node name="PillarWoodLeft4" parent="Level/Entrance/First Floor/Wall" index="10" instance=ExtResource( 9 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 9.53674e-007, -3.99944 )
 
-[node name="PillarWoodLeft5" parent="Level/Entrance/First Floor/Wall" index="12" instance=ExtResource( 9 )]
+[node name="PillarWoodLeft5" parent="Level/Entrance/First Floor/Wall" index="11" instance=ExtResource( 9 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 9.53674e-007, 0.000557899 )
 
-[node name="WallStraight8" parent="Level/Entrance/First Floor/Wall" index="13" instance=ExtResource( 4 )]
+[node name="WallStraight8" parent="Level/Entrance/First Floor/Wall" index="12" instance=ExtResource( 4 )]
 
 transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -14, 9.53674e-007, 0.000557899 )
 _sections_unfolded = [ "Transform" ]
@@ -379,17 +370,17 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3, 0.2 )
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8, 3, 0.2 )
 
-[node name="WallStraight13" parent="Level/Entrance/First Floor/Wall" index="14" instance=ExtResource( 4 )]
+[node name="WallStraight13" parent="Level/Entrance/First Floor/Wall" index="13" instance=ExtResource( 4 )]
 
 transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -14, 9.53674e-007, -3.99944 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="WallStraight9" parent="Level/Entrance/First Floor/Wall" index="15" instance=ExtResource( 4 )]
+[node name="WallStraight9" parent="Level/Entrance/First Floor/Wall" index="14" instance=ExtResource( 4 )]
 
 transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -14, 9.53674e-007, 4.00056 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="WallStraight10" parent="Level/Entrance/First Floor/Wall" index="16" instance=ExtResource( 4 )]
+[node name="WallStraight10" parent="Level/Entrance/First Floor/Wall" index="15" instance=ExtResource( 4 )]
 
 transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -14, 9.53674e-007, 8.00056 )
 _sections_unfolded = [ "Transform" ]
@@ -402,7 +393,20 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3, 0.2 )
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 0.2 )
 
-[node name="WallStraight11" parent="Level/Entrance/First Floor/Wall" index="17" instance=ExtResource( 4 )]
+[node name="WallStraight16" parent="Level/Entrance/First Floor/Wall" index="16" instance=ExtResource( 4 )]
+
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -14, 9.53674e-007, 16.0006 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="OilLampWall" parent="Level/Entrance/First Floor/Wall/WallStraight16" index="2" instance=ExtResource( 7 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3, 0.2 )
+
+[node name="OilLampWall2" parent="Level/Entrance/First Floor/Wall/WallStraight16" index="3" instance=ExtResource( 7 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 0.2 )
+
+[node name="WallStraight15" parent="Level/Entrance/First Floor/Wall" index="17" instance=ExtResource( 4 )]
 
 transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -14, 9.53674e-007, 12.0006 )
 _sections_unfolded = [ "Transform" ]
@@ -412,7 +416,21 @@ _sections_unfolded = [ "Transform" ]
 transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -10, 0, -4 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="WallStraight12" parent="Level/Entrance/First Floor/Wall" index="19" instance=ExtResource( 4 )]
+[node name="WallStraight11" parent="Level/Entrance/First Floor/Wall" index="19" instance=ExtResource( 4 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="OilLampWall" type="Spatial" parent="Level/Entrance/First Floor/Wall/WallStraight11" index="2" instance=ExtResource( 7 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 0.2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="OilLampWall2" parent="Level/Entrance/First Floor/Wall/WallStraight11" index="3" instance=ExtResource( 7 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3, 0.2 )
+
+[node name="WallStraight12" parent="Level/Entrance/First Floor/Wall" index="20" instance=ExtResource( 4 )]
 
 transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -10, 0, -8 )
 _sections_unfolded = [ "Transform" ]
@@ -427,19 +445,19 @@ transform = Transform( 1, 0, 3.57628e-007, 0, 1, 0, -3.57628e-007, 0, 1, -4.2099
 
 [node name="Flames" parent="Level/Entrance/First Floor/Object/Candelabra" index="1" instance=ExtResource( 11 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.173861, 0.542571, -0.0623971 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.146482, 0.542571, -0.0737543 )
 process_material = SubResource( 7 )
 draw_pass_1 = SubResource( 8 )
 
 [node name="Flames2" parent="Level/Entrance/First Floor/Object/Candelabra" index="2" instance=ExtResource( 11 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00976062, 0.53279, 0.187623 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00301218, 0.53279, 0.166291 )
 process_material = SubResource( 7 )
 draw_pass_1 = SubResource( 8 )
 
 [node name="Flames3" parent="Level/Entrance/First Floor/Object/Candelabra" index="3" instance=ExtResource( 11 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.153684, 0.530367, -0.070715 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.153684, 0.530367, -0.087317 )
 process_material = SubResource( 7 )
 draw_pass_1 = SubResource( 8 )
 
@@ -628,29 +646,19 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="StairRailingL3" parent="Level/Entrance/Ground Floor/Stair" index="0" instance=ExtResource( 32 )]
 
-editor/display_folded = true
 transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -10, -2.1, 8 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="StairRailingDownWall" parent="Level/Entrance/Ground Floor/Stair/StairRailingL3" index="1" instance=ExtResource( 33 )]
-
-transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 4.76837e-007, 0.1, 0 )
-
-[node name="StairRailingDownWall2" parent="Level/Entrance/Ground Floor/Stair/StairRailingL3" index="2" instance=ExtResource( 33 )]
+[node name="StairRailingDownWall2" parent="Level/Entrance/Ground Floor/Stair/StairRailingL3" index="1" instance=ExtResource( 33 )]
 
 transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 0, 0.1, 0 )
 
 [node name="StairRailingL4" parent="Level/Entrance/Ground Floor/Stair" index="1" instance=ExtResource( 32 )]
 
-editor/display_folded = true
 transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -10, -2.1, 12 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="StairRailingDownWall" parent="Level/Entrance/Ground Floor/Stair/StairRailingL4" index="1" instance=ExtResource( 33 )]
-
-transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 4.76837e-007, 0.1, 0 )
-
-[node name="StairRailingDownWall2" parent="Level/Entrance/Ground Floor/Stair/StairRailingL4" index="2" instance=ExtResource( 33 )]
 
 transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 0, 0.1, 0 )
 
@@ -666,7 +674,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="StairRailingL2" parent="Level/Entrance/Ground Floor/Stair" index="4" instance=ExtResource( 32 )]
 
-editor/display_folded = true
 transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -10, -2.1, 4 )
 _sections_unfolded = [ "Transform" ]
 
@@ -700,7 +707,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="StairRailingC" parent="Level/Entrance/Ground Floor/Stair" index="8" instance=ExtResource( 32 )]
 
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -2.1, 4 )
 _sections_unfolded = [ "Transform" ]
 
@@ -751,15 +757,13 @@ _sections_unfolded = [ "Transform" ]
 transform = Transform( 1.31134e-007, 0, -1, 0, 1, 0, 1, 0, 1.31134e-007, 10, -2, 12 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="OilLampWall" type="Spatial" parent="Level/Entrance/Ground Floor/Stair/WallStraight1" index="2" instance=ExtResource( 7 )]
+[node name="OilLampWall" parent="Level/Entrance/Ground Floor/Stair/WallStraight1" index="2" instance=ExtResource( 7 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3, 0.2 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="OilLampWall2" type="Spatial" parent="Level/Entrance/Ground Floor/Stair/WallStraight1" index="3" instance=ExtResource( 7 )]
+[node name="OilLampWall2" parent="Level/Entrance/Ground Floor/Stair/WallStraight1" index="3" instance=ExtResource( 7 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 0.2 )
-_sections_unfolded = [ "Transform" ]
 
 [node name="Floor" type="Spatial" parent="Level/Entrance/Ground Floor" index="2"]
 
@@ -768,7 +772,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Object" type="Spatial" parent="Level/Entrance/Ground Floor" index="3"]
 
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 8.46406 )
 
 [node name="Desk" parent="Level/Entrance/Ground Floor/Object" index="0" instance=ExtResource( 41 )]
@@ -969,15 +972,13 @@ transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -8 )
 
 transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -8 )
 
-[node name="OilLampWall" type="Spatial" parent="Level/Room Right/First Floor/Wall/WallStraight_5" index="2" instance=ExtResource( 7 )]
+[node name="OilLampWall" parent="Level/Room Right/First Floor/Wall/WallStraight_5" index="2" instance=ExtResource( 7 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3, 0.2 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="OilLampWall2" type="Spatial" parent="Level/Room Right/First Floor/Wall/WallStraight_5" index="3" instance=ExtResource( 7 )]
+[node name="OilLampWall2" parent="Level/Room Right/First Floor/Wall/WallStraight_5" index="3" instance=ExtResource( 7 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 0.2 )
-_sections_unfolded = [ "Transform" ]
 
 [node name="WallStraight_6" parent="Level/Room Right/First Floor/Wall" index="5" instance=ExtResource( 4 )]
 
