@@ -1,11 +1,34 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Objects/Decors/Haunted Mansion/Models/shelf_2x2_v1.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://Objects/Decors/Haunted Mansion/Mats/HauntedMansionMaterial.tres" type="Material" id=2]
 
+[sub_resource type="BoxShape" id=1]
+
+extents = Vector3( 1.07545, 1.22821, 0.473607 )
+
 [node name="Shelf2x2_1" type="Spatial" index="0"]
 
-[node name="MeshInstance" type="MeshInstance" parent="." index="0"]
+[node name="Collision" type="StaticBody" parent="." index="0"]
+
+editor/display_folded = true
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="Collision" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23136, 0.372929 )
+shape = SubResource( 1 )
+disabled = false
+
+[node name="MeshInstance" type="MeshInstance" parent="." index="1"]
 
 layers = 1
 material_override = null

@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Objects/Decors/Haunted Mansion/Models/wall_window_1x2.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://Objects/Decors/Haunted Mansion/Mats/HauntedMansionMaterial.tres" type="Material" id=2]
 
-[node name="WallWindow1x2" type="Spatial" index="0"]
+[sub_resource type="BoxShape" id=1]
+
+extents = Vector3( 2.01734, 2.4323, 0.368308 )
+
+[node name="WallWindow1x2" type="Spatial"]
 
 [node name="MeshInstance" type="MeshInstance" parent="." index="0"]
 
@@ -20,5 +24,22 @@ mesh = ExtResource( 1 )
 skeleton = NodePath("..")
 material/0 = ExtResource( 2 )
 _sections_unfolded = [ "material" ]
+
+[node name="Collision" type="StaticBody" parent="." index="1"]
+
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Collision" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.98328, 2.39488, 0.0997887 )
+shape = SubResource( 1 )
+disabled = false
 
 
