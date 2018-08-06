@@ -3,8 +3,10 @@
 [ext_resource path="res://Objects/Decors/Haunted Mansion/Models/sample_level_floor.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://Objects/Decors/Haunted Mansion/Mats/HauntedMansionFloorMaterial.tres" type="Material" id=2]
 [ext_resource path="res://Objects/Decors/Haunted Mansion/Models/sample_level_rugs.obj" type="ArrayMesh" id=3]
-[ext_resource path="res://Objects/Decors/Haunted Mansion/Mats/HauntedMansionMaterial.tres" type="Material" id=4]
+[ext_resource path="res://Objects/Decors/Haunted Mansion/Mats/HauntedMansionObjectMaterial.tres" type="Material" id=4]
 [ext_resource path="res://Objects/Decors/Haunted Mansion/Models/sample_level_walls.obj" type="ArrayMesh" id=5]
+
+
 
 [node name="Spatial" type="Spatial" index="0"]
 

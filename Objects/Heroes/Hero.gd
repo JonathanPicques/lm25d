@@ -50,11 +50,13 @@ var floor_velocity = Vector3()
 
 var _every_timer_tag = null
 
+
 onready var timer = $Timer
 onready var sprite = $HeroSprite
 onready var every_timer = $EveryTimer
 onready var walk_particles = $WalkParticles
 onready var animation_player = $AnimationPlayer
+onready var flashlight_light = $HeroSprite/Flashlight/Light
 onready var sound_effect_players = [$SoundEffects/SFX1, $SoundEffects/SFX2, $SoundEffects/SFX3, $SoundEffects/SFX4]
 
 # _process updates input.
@@ -152,7 +154,7 @@ func is_timer_finished():
 func change_direction(new_direction):
 	direction = new_direction
 	sprite.scale.x = new_direction
-	# sprite.transform = sprite.transform.rotated(Vector3(0.0, 1.0, 0.0), PI)
+	flashlight_light.shadow_reverse_cull_face = new_direction > 0
 
 # change_animation changes the sprite animation.
 # @impure

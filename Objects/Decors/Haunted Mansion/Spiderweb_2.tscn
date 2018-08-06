@@ -1,7 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Objects/Decors/Haunted Mansion/Models/spider_web_02.obj" type="ArrayMesh" id=1]
-[ext_resource path="res://Objects/Decors/Haunted Mansion/Mats/HauntedMansionMaterial.tres" type="Material" id=2]
+[ext_resource path="res://Objects/Decors/Haunted Mansion/Mats/HauntedMansionObjectMaterial.tres" type="Material" id=2]
+
+
 
 [node name="Spiderweb_2" type="Spatial" index="0"]
 

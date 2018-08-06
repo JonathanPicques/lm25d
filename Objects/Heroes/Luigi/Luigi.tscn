@@ -193,9 +193,8 @@ tracks/3/keys = {
 
 extents = Vector3( 0.35, 0.880308, 0.15 )
 
-[node name="Luigi" type="KinematicBody"]
+[node name="Luigi" type="KinematicBody" index="0"]
 
-editor/display_folded = true
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 2

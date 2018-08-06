@@ -1,10 +1,12 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Objects/Decors/Haunted Mansion/Models/scale.obj" type="ArrayMesh" id=1]
-[ext_resource path="res://Objects/Decors/Haunted Mansion/Mats/HauntedMansionMaterial.tres" type="Material" id=2]
+[ext_resource path="res://Objects/Decors/Haunted Mansion/Mats/HauntedMansionObjectMaterial.tres" type="Material" id=2]
 [ext_resource path="res://Objects/Decors/Haunted Mansion/Models/scale_arm.obj" type="ArrayMesh" id=3]
 [ext_resource path="res://Objects/Decors/Haunted Mansion/Models/scale_l_point.obj" type="ArrayMesh" id=4]
 [ext_resource path="res://Objects/Decors/Haunted Mansion/Models/scale_r_point.obj" type="ArrayMesh" id=5]
+
+
 
 [node name="Scale" type="Spatial"]
 
