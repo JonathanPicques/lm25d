@@ -232,15 +232,9 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Level" type="Spatial" parent="." index="1"]
 
-editor/display_folded = true
-
 [node name="Entrance" type="Spatial" parent="Level" index="0"]
 
-editor/display_folded = true
-
 [node name="Ceiling" type="Spatial" parent="Level/Entrance" index="0"]
-
-editor/display_folded = true
 
 [node name="MeshInstance" type="MeshInstance" parent="Level/Entrance/Ceiling" index="0"]
 
@@ -261,11 +255,7 @@ _sections_unfolded = [ "material" ]
 
 [node name="First Floor" type="Spatial" parent="Level/Entrance" index="1"]
 
-editor/display_folded = true
-
 [node name="Wall" type="Spatial" parent="Level/Entrance/First Floor" index="0"]
-
-editor/display_folded = true
 
 [node name="WallWindow1x2" parent="Level/Entrance/First Floor/Wall" index="0" instance=ExtResource( 2 )]
 
@@ -359,7 +349,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 9.53674e-007, 0.000557899 )
 
 [node name="WallStraight8" parent="Level/Entrance/First Floor/Wall" index="12" instance=ExtResource( 4 )]
 
-transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -14, 9.53674e-007, 0.000557899 )
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -14, 0, 0 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="OilLampWall" parent="Level/Entrance/First Floor/Wall/WallStraight8" index="2" instance=ExtResource( 7 )]
@@ -372,7 +362,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8, 3, 0.2 )
 
 [node name="WallStraight13" parent="Level/Entrance/First Floor/Wall" index="13" instance=ExtResource( 4 )]
 
-transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -14, 9.53674e-007, -3.99944 )
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -14, 0, -4 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="WallStraight9" parent="Level/Entrance/First Floor/Wall" index="14" instance=ExtResource( 4 )]
@@ -510,10 +500,9 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Object" type="Spatial" parent="Level/Entrance/First Floor" index="2"]
 
-editor/display_folded = true
-
 [node name="Candelabra" parent="Level/Entrance/First Floor/Object" index="0" instance=ExtResource( 11 )]
 
+editor/display_folded = true
 transform = Transform( 1, 0, 3.57628e-007, 0, 1, 0, -3.57628e-007, 0, 1, -4.20994, 0.0160339, -3.3423 )
 
 [node name="Flames" parent="Level/Entrance/First Floor/Object/Candelabra" index="1" instance=ExtResource( 12 )]
@@ -979,7 +968,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3, 0.2 )
 
 [node name="WallStraight_4" parent="Level/Room Right/First Floor/Wall" index="2" instance=ExtResource( 4 )]
 
-transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -8 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -8 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="WallStraight_7" parent="Level/Room Right/First Floor/Wall" index="3" instance=ExtResource( 4 )]
@@ -1003,7 +992,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 0.2 )
 [node name="WallStraight_5" parent="Level/Room Right/First Floor/Wall" index="5" instance=ExtResource( 4 )]
 
 editor/display_folded = true
-transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -8 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -8 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="OilLampWall" parent="Level/Room Right/First Floor/Wall/WallStraight_5" index="2" instance=ExtResource( 7 )]
@@ -1016,7 +1005,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 0.2 )
 
 [node name="WallStraight_6" parent="Level/Room Right/First Floor/Wall" index="6" instance=ExtResource( 4 )]
 
-transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, -8 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -8 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="PillarWoodHalf3" parent="Level/Room Right/First Floor/Wall" index="7" instance=ExtResource( 40 )]
