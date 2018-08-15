@@ -18,8 +18,8 @@ enum HeroDirection {
 	right = 1
 }
 enum HeroOrientation {
-	Vertical = 0,
-	Horizontal = 1
+	vertical = 0,
+	horizontal = 1
 }
 
 const FLOOR_VECTOR = Vector3(0, 1, 0)
@@ -42,7 +42,7 @@ var input_jump = false
 var input_velocity = Vector3()
 
 var direction = HeroDirection.right
-var orientation = HeroOrientation.Horizontal
+var orientation = HeroOrientation.horizontal
 
 var on_wall = false
 var on_floor = false
@@ -156,7 +156,7 @@ func every_seconds(seconds, timer_tag):
 		return true
 	return false
 
-## Animation / Direction
+## Direction / Orientation / Animation
 ## ---
 
 # change_direction changes the hero direction and flips the sprite accordingly.
@@ -164,8 +164,16 @@ func every_seconds(seconds, timer_tag):
 # @param(float) new_direction
 func change_direction(new_direction):
 	direction = new_direction
-	sprite.scale.x = new_direction
+	sprite.scale.x = abs(sprite.scale.x) * new_direction * (1 if orientation == HeroOrientation.horizontal else -1)
 	flashlight_light.shadow_reverse_cull_face = new_direction > 0
+
+# change_orientation changes the hero orientation and flips the sprite accordingly.
+# @impure
+# @param(float) new_direction
+func change_orientation(new_orientation):
+	orientation = new_orientation
+	rotation_degrees.y = (1 - new_orientation) * 90
+	change_direction(-direction)
 
 # change_animation changes the sprite animation.
 # @impure
@@ -249,6 +257,8 @@ func change_health(health_to_change):
 # @param(float) jump_strength
 func handle_jump(jump_strength):
 	velocity.y = jump_strength
+	on_floor = false
+	_on_floor_threshold = MOVE_STATE_THRESHOLD
 
 # handle_gravity handles gravity.
 # @impure
@@ -320,13 +330,13 @@ func get_deceleration(delta, value, deceleration):
 # @pure
 # @returns(float)
 func get_upward_input():
-	return input_velocity.z if orientation == HeroOrientation.Horizontal else -input_velocity.z
+	return input_velocity.z
 
 # get_upward_input returns the forward input component.
 # @pure
 # @returns(float)
 func get_forward_input():
-	return input_velocity.x if orientation == HeroOrientation.Horizontal else -input_velocity.x
+	return input_velocity.x if orientation == HeroOrientation.horizontal else -input_velocity.x
 
 # has_upward_input returns whether there is a non-zero upward input component.
 # @pure
@@ -444,25 +454,25 @@ func is_nearly(value1, value2, epsilon = 0.01):
 # @pure
 # @returns(float)
 func get_upward_vector(vec):
-	return vec.z if orientation == HeroOrientation.Horizontal else vec.x
+	return vec.z if orientation == HeroOrientation.horizontal else vec.x
 
 # get_upward_vector returns the forward vector component.
 # @pure
 # @returns(float)
 func get_forward_vector(vec):
-	return vec.x if orientation == HeroOrientation.Horizontal else vec.z
+	return vec.x if orientation == HeroOrientation.horizontal else vec.z
 
 # has_upward_vector returns whether there is a non-zero upward vector component.
 # @pure
 # @returns(boolean)
 func has_upward_vector(vec):
-	return not is_nearly(vec.z if orientation == HeroOrientation.Horizontal else vec.x, 0, 0.001)
+	return not is_nearly(vec.z if orientation == HeroOrientation.horizontal else vec.x, 0, 0.001)
 
 # has_forward_vector returns whether there is a non-zero forward vector component.
 # @pure
 # @returns(boolean)
 func has_forward_vector(vec):
-	return not is_nearly(vec.x if orientation == HeroOrientation.Horizontal else vec.x, 0, 0.001)
+	return not is_nearly(vec.x if orientation == HeroOrientation.horizontal else vec.z, 0, 0.001)
 
 # has_upward_vector_same_direction returns whether the upward vector component is moving towards the hero direction.
 # @pure
@@ -495,8 +505,8 @@ func has_forward_vector_invert_direction(vec, direction = self.direction):
 # @returns(Vector3)
 func with_upward_vector_value(vec, value):
 	match orientation:
-		HeroOrientation.Vertical: return Vector3(value, vec.y, vec.z)
-		HeroOrientation.Horizontal: return Vector3(vec.x, vec.y, value)
+		HeroOrientation.vertical: return Vector3(value, vec.y, vec.z)
+		HeroOrientation.horizontal: return Vector3(vec.x, vec.y, value)
 
 # with_forward_vector_value returns a vector with the forward component set to the given value.
 # @pure
@@ -505,5 +515,5 @@ func with_upward_vector_value(vec, value):
 # @returns(Vector3)
 func with_forward_vector_value(vec, value):
 	match orientation:
-		HeroOrientation.Vertical: return Vector3(vec.x, vec.y, value)
-		HeroOrientation.Horizontal: return Vector3(value, vec.y, vec.z)
+		HeroOrientation.vertical: return Vector3(vec.x, vec.y, value)
+		HeroOrientation.horizontal: return Vector3(value, vec.y, vec.z)

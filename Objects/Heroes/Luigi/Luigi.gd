@@ -24,6 +24,8 @@ var coin_sound = preload("../../Pickups/Coin/Sounds/Coin.ogg")
 
 func _ready():
 	set_state(HeroState.fall)
+	change_orientation(HeroOrientation.horizontal)
+	change_direction(HeroDirection.right)
 
 func _physics_process(delta):
 	process_velocity(delta)
@@ -64,7 +66,6 @@ func reset_state():
 ## ---
 
 func pre_stand():
-	jumps = MAX_JUMPS
 	change_animation("Stand")
 
 func stand(delta):
@@ -80,13 +81,8 @@ func stand(delta):
 	elif has_forward_velocity() or has_upward_velocity():
 		return set_state(HeroState.walk_skid)
 
-var walk_lock_velocity = 0
-var walk_lock_direction = 0
-
 func pre_walk():
 	walk_particles.emitting = true
-	walk_lock_velocity = input_velocity
-	walk_lock_direction = direction
 	start_timer(0.25)
 	change_animation("Walk")
 	if has_forward_velocity_same_direction() and get_forward_velocity() > FLOOR_SPD.x - 1.0:
@@ -115,14 +111,12 @@ func walk_2(delta):
 		play_sound_effect(step_sound)
 	if not on_floor:
 		return set_state(HeroState.fall)
+	elif has_forward_input_invert_direction() or not has_forward_input() and not has_upward_input():
+		return self.set_state(HeroState.walk_skid)
 	elif on_wall and not has_forward_vector(velocity_offset) and not has_upward_vector(velocity_offset):
 		return set_state(HeroState.walk_wall)
 	elif input_jump and jumps > 0:
 		return set_state(HeroState.jump)
-	elif has_forward_input_same_direction(-walk_lock_direction):
-		return self.set_state(HeroState.walk_turn)
-	elif not has_forward_input() and not has_upward_input():
-		return self.set_state(HeroState.walk_skid)
 
 func pre_walk_wall():
 	change_animation("Stand")
@@ -132,10 +126,10 @@ func walk_wall(delta):
 	handle_directional_move(delta, FLOOR_SPD, FLOOR_ACC, FLOOR_DEC)
 	if not on_floor:
 		return set_state(HeroState.fall)
-	elif not on_wall or has_forward_vector(velocity_offset) or has_upward_vector(velocity_offset):
-		return set_state(HeroState.stand)
 	elif input_jump and jumps > 0:
 		return set_state(HeroState.jump)
+	elif not on_wall or has_forward_vector(velocity_offset) or has_upward_vector(velocity_offset):
+		return set_state(HeroState.stand)
 
 func pre_walk_skid():
 	start_timer(0.2)
@@ -143,14 +137,14 @@ func pre_walk_skid():
 
 func walk_skid(delta):
 	handle_gravity(delta, GRAVITY_SPD, GRAVITY_ACC)
-	handle_deceleration_move(delta, FLOOR_DEC if not has_forward_input_same_direction(-walk_lock_direction) else FLOOR_ACC + FLOOR_DEC)
+	handle_deceleration_move(delta, FLOOR_DEC if not has_forward_input_invert_direction() else FLOOR_ACC + FLOOR_DEC)
 	if not on_floor:
 		return set_state(HeroState.fall)
 	elif input_jump and jumps > 0:
 		return set_state(HeroState.jump)
 	elif has_forward_input_invert_direction() and is_timer_finished():
 		return set_state(HeroState.walk_turn)
-	elif has_upward_input() or has_forward_input() and has_forward_input_same_direction():
+	elif has_forward_input() and has_forward_input_same_direction() or has_upward_input() and not has_forward_input_invert_direction():
 		return set_state(HeroState.walk)
 	elif not has_forward_velocity() and not has_upward_velocity():
 		return set_state(HeroState.stand)
@@ -192,6 +186,7 @@ func fall(delta):
 		return set_state(HeroState.fall_to_stand)
 
 func pre_fall_to_stand():
+	jumps = MAX_JUMPS
 	start_timer(0.08)
 	change_animation("Skid")
 	play_sound_effect(step_sound)
