@@ -3,16 +3,16 @@ extends "../Hero.gd"
 const MAX_JUMPS = 1
 const JUMP_STRENGTH = 5.5
 
-const GRAVITY = Vector3(0, -16.0, 0)
-const GRAVITY_MAX_SPEED = Vector3(0, -22.0, 0)
+const GRAVITY_SPD = Vector3(0, -22.0, 0)
+const GRAVITY_ACC = Vector3(0, -16.0, 0)
 
+const FLOOR_SPD = Vector3(3.4, 0, 2.8)
 const FLOOR_ACC = Vector3(4.0, 0.0, 4.0)
 const FLOOR_DEC = Vector3(6.0, 0.0, 4.5)
-const FLOOR_MAX_SPEED = Vector3(3.4, 0, 2.8)
 
+const AIRBORNE_SPD = Vector3(3.2, 0.0, 2.4)
 const AIRBORNE_ACC = Vector3(3.5, 0.0, 3.0)
 const AIRBORNE_DEC = Vector3(6.0, 0.0, 4.5)
-const AIRBORNE_MAX_SPEED = Vector3(3.2, 0.0, 2.4)
 
 var jump_sound = preload("./Sounds/Jump.ogg")
 var turn_sound = preload("./Sounds/Turn.ogg")
@@ -42,6 +42,7 @@ func _physics_process(delta):
 # ---
 
 func set_state(new_state):
+	reset_state()
 	state = new_state
 	match state:
 		HeroState.stand: pre_stand()
@@ -54,6 +55,11 @@ func set_state(new_state):
 		HeroState.fall: pre_fall()
 		HeroState.fall_to_stand: pre_fall_to_stand()
 
+func reset_state():
+	walk_particles.emitting = false
+	every_seconds(100.0, "res")
+	change_animation_speed(1.0)
+
 ## Horizontal movement states
 ## ---
 
@@ -62,16 +68,16 @@ func pre_stand():
 	change_animation("Stand")
 
 func stand(delta):
-	velocity = get_gravity_acceleration(delta, velocity, GRAVITY, GRAVITY_MAX_SPEED)
+	handle_gravity(delta, GRAVITY_SPD, GRAVITY_ACC)
 	if not on_floor:
 		return set_state(HeroState.fall)
 	elif input_jump and jumps > 0:
 		return set_state(HeroState.jump)
-	elif is_moving_x(input_velocity) and not is_moving_direction(direction, input_velocity):
+	elif has_forward_input() and has_forward_input_invert_direction():
 		return set_state(HeroState.walk_turn)
-	elif is_moving_x(input_velocity) or is_moving_z(input_velocity):
+	elif has_forward_input() or has_upward_input():
 		return set_state(HeroState.walk)
-	elif is_moving_x(velocity) or is_moving_z(velocity):
+	elif has_forward_velocity() or has_upward_velocity():
 		return set_state(HeroState.walk_skid)
 
 var walk_lock_velocity = 0
@@ -82,80 +88,71 @@ func pre_walk():
 	walk_lock_velocity = input_velocity
 	walk_lock_direction = direction
 	start_timer(0.25)
-	every_seconds(1.0, "r")
 	change_animation("Walk")
-	if is_moving_direction(direction, velocity) and abs(velocity.x) > FLOOR_MAX_SPEED.x - 1.0:
+	if has_forward_velocity_same_direction() and get_forward_velocity() > FLOOR_SPD.x - 1.0:
 		return self.set_state(HeroState.walk_2)
 	change_animation_speed(1.6)
 
 func walk(delta):
-	velocity = get_movement(delta, velocity, walk_lock_velocity, FLOOR_ACC, FLOOR_DEC, FLOOR_MAX_SPEED)
-	velocity = get_gravity_acceleration(delta, velocity, GRAVITY, GRAVITY_MAX_SPEED)
+	handle_gravity(delta, GRAVITY_SPD, GRAVITY_ACC)
+	handle_directional_move(delta, FLOOR_SPD, FLOOR_ACC, FLOOR_DEC)
 	if every_seconds(0.08, "walk"):
 		play_sound_effect(step_sound)
 	if not on_floor:
-		change_animation_speed(1.0)
-		walk_particles.emitting = false
 		return set_state(HeroState.fall)
 	elif input_jump and jumps > 0:
-		walk_particles.emitting = false
 		return set_state(HeroState.jump)
 	elif is_timer_finished():
-		change_animation_speed(1.0)
 		return self.set_state(HeroState.walk_2)
 
 func pre_walk_2():
-	every_seconds(1.0, "r")
+	walk_particles.emitting = true
 
 func walk_2(delta):
-	velocity = get_movement(delta, velocity, input_velocity, FLOOR_ACC, FLOOR_DEC, FLOOR_MAX_SPEED)
-	velocity = get_gravity_acceleration(delta, velocity, GRAVITY, GRAVITY_MAX_SPEED)
+	handle_gravity(delta, GRAVITY_SPD, GRAVITY_ACC)
+	handle_directional_move(delta, FLOOR_SPD, FLOOR_ACC, FLOOR_DEC)
 	if every_seconds(0.24, "walk"):
 		play_sound_effect(step_sound)
 	if not on_floor:
-		walk_particles.emitting = false
 		return set_state(HeroState.fall)
-	elif on_wall and not is_moving_x(velocity_offset) and not is_moving_z(velocity_offset):
-		walk_particles.emitting = false
+	elif on_wall and not has_forward_vector(velocity_offset) and not has_upward_vector(velocity_offset):
 		return set_state(HeroState.walk_wall)
 	elif input_jump and jumps > 0:
-		walk_particles.emitting = false
 		return set_state(HeroState.jump)
-	elif is_moving_direction(-walk_lock_direction, input_velocity):
-		walk_particles.emitting = false
+	elif has_forward_input_same_direction(-walk_lock_direction):
 		return self.set_state(HeroState.walk_turn)
-	elif not is_moving_x(input_velocity) and not is_moving_z(input_velocity):
-		walk_particles.emitting = false
+	elif not has_forward_input() and not has_upward_input():
 		return self.set_state(HeroState.walk_skid)
 
 func pre_walk_wall():
 	change_animation("Stand")
 
 func walk_wall(delta):
-	velocity = get_movement(delta, velocity, input_velocity, FLOOR_ACC, FLOOR_DEC, FLOOR_MAX_SPEED)
-	velocity = get_gravity_acceleration(delta, velocity, GRAVITY, GRAVITY_MAX_SPEED)
+	handle_gravity(delta, GRAVITY_SPD, GRAVITY_ACC)
+	handle_directional_move(delta, FLOOR_SPD, FLOOR_ACC, FLOOR_DEC)
 	if not on_floor:
 		return set_state(HeroState.fall)
-	elif not on_wall or is_moving_x(velocity_offset) or is_moving_z(velocity_offset):
+	elif not on_wall or has_forward_vector(velocity_offset) or has_upward_vector(velocity_offset):
 		return set_state(HeroState.stand)
 	elif input_jump and jumps > 0:
 		return set_state(HeroState.jump)
 
 func pre_walk_skid():
+	start_timer(0.2)
 	change_animation("Skid")
 
 func walk_skid(delta):
-	velocity = get_movement(delta, velocity, Vector3(), FLOOR_ACC, FLOOR_DEC if not is_moving_direction(-walk_lock_direction, input_velocity) else FLOOR_ACC + FLOOR_DEC, FLOOR_MAX_SPEED)
-	velocity = get_gravity_acceleration(delta, velocity, GRAVITY, GRAVITY_MAX_SPEED)
+	handle_gravity(delta, GRAVITY_SPD, GRAVITY_ACC)
+	handle_deceleration_move(delta, FLOOR_DEC if not has_forward_input_same_direction(-walk_lock_direction) else FLOOR_ACC + FLOOR_DEC)
 	if not on_floor:
 		return set_state(HeroState.fall)
 	elif input_jump and jumps > 0:
 		return set_state(HeroState.jump)
-	elif is_moving_x(input_velocity) and not is_moving_direction(direction, input_velocity):
+	elif has_forward_input_invert_direction() and is_timer_finished():
 		return set_state(HeroState.walk_turn)
-	elif is_moving_x(input_velocity) or is_moving_z(input_velocity):
+	elif has_upward_input() or has_forward_input() and has_forward_input_same_direction():
 		return set_state(HeroState.walk)
-	elif not is_moving_x(velocity) and not is_moving_z(velocity):
+	elif not has_forward_velocity() and not has_upward_velocity():
 		return set_state(HeroState.stand)
 
 func pre_walk_turn():
@@ -164,8 +161,8 @@ func pre_walk_turn():
 	play_sound_effect(turn_sound)
 
 func walk_turn(delta):
-	velocity = get_movement(delta, velocity, Vector3(), FLOOR_ACC, FLOOR_ACC + FLOOR_DEC, FLOOR_MAX_SPEED)
-	velocity = get_gravity_acceleration(delta, velocity, GRAVITY, GRAVITY_MAX_SPEED)
+	handle_gravity(delta, GRAVITY_SPD, GRAVITY_ACC)
+	handle_deceleration_move(delta, FLOOR_ACC + FLOOR_DEC)
 	if is_timer_finished():
 		change_direction(-direction)
 		return self.set_state(HeroState.stand)
@@ -175,22 +172,22 @@ func walk_turn(delta):
 
 func pre_jump():
 	jumps -= 1
-	velocity = Vector3(velocity.x, JUMP_STRENGTH, velocity.z)
+	handle_jump(JUMP_STRENGTH)
 	change_animation("Jump")
 	play_sound_effect(jump_sound)
 
 func jump(delta):
 	if velocity.y < 0:
 		set_state(HeroState.fall)
-	velocity = get_movement(delta, velocity, input_velocity, AIRBORNE_ACC, AIRBORNE_DEC, AIRBORNE_MAX_SPEED)
-	velocity = get_gravity_acceleration(delta, velocity, GRAVITY, GRAVITY_MAX_SPEED)
+	handle_gravity(delta, GRAVITY_SPD, GRAVITY_ACC)
+	handle_airborne_move(delta, AIRBORNE_SPD, AIRBORNE_ACC, AIRBORNE_DEC)
 
 func pre_fall():
 	change_animation("Fall")
 
 func fall(delta):
-	velocity = get_movement(delta, velocity, input_velocity, AIRBORNE_ACC, AIRBORNE_DEC, AIRBORNE_MAX_SPEED)
-	velocity = get_gravity_acceleration(delta, velocity, GRAVITY, GRAVITY_MAX_SPEED)
+	handle_gravity(delta, GRAVITY_SPD, GRAVITY_ACC)
+	handle_airborne_move(delta, AIRBORNE_SPD, AIRBORNE_ACC, AIRBORNE_DEC)
 	if on_floor:
 		return set_state(HeroState.fall_to_stand)
 
@@ -200,14 +197,13 @@ func pre_fall_to_stand():
 	play_sound_effect(step_sound)
 
 func fall_to_stand(delta):
-	velocity = get_movement(delta, velocity, Vector3(), FLOOR_ACC, FLOOR_DEC, FLOOR_MAX_SPEED)
-	velocity = get_gravity_acceleration(delta, velocity, GRAVITY, GRAVITY_MAX_SPEED)
+	handle_gravity(delta, GRAVITY_SPD, GRAVITY_ACC)
+	handle_deceleration_move(delta, FLOOR_DEC)
 	if is_timer_finished():
-		return self.set_state(HeroState.stand)
+		return self.set_state(HeroState.stand if velocity == Vector3() else HeroState.walk_skid)
 
 func _on_AreaPickup_body_entered(body):
 	if body.is_in_group("Coin"):
-		coins += 10
+		add_gold(10)
 		body.queue_free()
 		play_sound_effect(coin_sound)
-		$HudViewport/HealthHud.set_gold_counter(coins)
