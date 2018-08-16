@@ -159,7 +159,7 @@ radial_segments = 64
 rings = 32
 is_hemisphere = false
 
-[node name="Flames" type="Particles"]
+[node name="Flames" type="Particles" index="0"]
 
 layers = 1
 material_override = null
@@ -180,13 +180,13 @@ explosiveness = 0.0
 randomness = 0.0
 fixed_fps = 0
 fract_delta = true
-visibility_aabb = AABB( -4, -4, -4, 8, 8, 8 )
+visibility_aabb = AABB( -0.001, -0.001, -0.001, 0.002, 0.002, 0.002 )
 local_coords = true
 draw_order = 0
 process_material = SubResource( 5 )
 draw_passes = 1
 draw_pass_1 = SubResource( 6 )
-_sections_unfolded = [ "Draw Passes", "Process Material", "Time", "Transform" ]
+_sections_unfolded = [ "Draw Passes", "Geometry", "LOD", "Process Material", "Time", "Transform", "Visibility" ]
 
 [node name="Sparks" type="Particles" parent="." index="0"]
 
@@ -209,7 +209,7 @@ explosiveness = 0.0
 randomness = 0.0
 fixed_fps = 0
 fract_delta = true
-visibility_aabb = AABB( -4, -4, -4, 8, 8, 8 )
+visibility_aabb = AABB( -0.001, -0.001, -0.001, 0.002, 0.002, 0.002 )
 local_coords = true
 draw_order = 0
 process_material = SubResource( 13 )

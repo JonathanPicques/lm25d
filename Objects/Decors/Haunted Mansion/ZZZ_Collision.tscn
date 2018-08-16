@@ -2,9 +2,9 @@
 
 [sub_resource type="BoxShape" id=1]
 
-extents = Vector3( 2.01734, 2.4323, 0.368308 )
+extents = Vector3( 1, 1, 1 )
 
-[node name="Collision" type="StaticBody"]
+[node name="Collision" type="StaticBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -17,8 +17,8 @@ constant_angular_velocity = Vector3( 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="0"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.98328, 2.39488, 0.0997887 )
 shape = SubResource( 1 )
 disabled = false
+_sections_unfolded = [ "Transform" ]
 
 

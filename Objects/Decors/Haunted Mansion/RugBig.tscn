@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Objects/Decors/Haunted Mansion/Models/shelf_2x2_v2.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Objects/Decors/Haunted Mansion/Models/rug_big.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://Objects/Decors/Haunted Mansion/Mats/HauntedMansionObjectMaterial.tres" type="Material" id=2]
 
-[node name="Shelf2x2_2" type="Spatial"]
+[node name="RugBig" type="Spatial" index="0"]
 
 [node name="MeshInstance" type="MeshInstance" parent="." index="0"]
 
