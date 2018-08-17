@@ -3,8 +3,6 @@
 [ext_resource path="res://Objects/Decors/Haunted Mansion/Models/paper_tower_medium.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://Objects/Decors/Haunted Mansion/Mats/HauntedMansionObjectMaterial.tres" type="Material" id=2]
 
-
-
 [node name="PaperTowerMedium" type="Spatial" index="0"]
 
 [node name="MeshInstance" type="MeshInstance" parent="." index="0"]

@@ -24,6 +24,7 @@ _sections_unfolded = [ "Transform", "material" ]
 
 [node name="WarmOmniLight" parent="." index="1" instance=ExtResource( 3 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0 )
+_sections_unfolded = [ "Light", "Omni", "Shadow", "Transform" ]
 
 
