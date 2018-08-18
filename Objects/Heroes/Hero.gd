@@ -179,7 +179,7 @@ func change_orientation(new_orientation):
 # @impure
 # @param(string) animation
 func change_animation(animation):
-	animation_player.play(animation)
+	animation_player.play(animation + " Flashlight" if animation_player.get_animation(animation + " Flashlight") != null else animation)
 
 # change_animation_speed changes the sprite animation speed.
 # @impure

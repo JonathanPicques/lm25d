@@ -244,8 +244,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Entrance" type="Spatial" parent="Level" index="0"]
 
-editor/display_folded = true
-
 [node name="Ceiling" type="Spatial" parent="Level/Entrance" index="0"]
 
 editor/display_folded = true
