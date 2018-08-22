@@ -22,27 +22,35 @@ enum HeroOrientation {
 	horizontal = 1
 }
 
+# Input
+
+var input_jump = false
+var input_velocity = Vector3()
+var input_flashlight = false
+
+# State and variables
+
+var state = HeroState.stand
+var state_prev = state
+var current_animation = ""
+
+var gold = 0
+var jumps = 0
+var health = 100
+var direction = HeroDirection.right
+var orientation = HeroOrientation.horizontal
+var flashlight_on = true
+
+# Movement
+
 const FLOOR_VECTOR = Vector3(0, 1, 0)
 const FLOOR_MAX_ANGLE = cos(deg2rad(45))
 const FLOOR_STOP_MIN_VELOCITY = 0.005
 const MOVE_STATE_THRESHOLD = 0.1
 
-var gold = 0
-var health = 100
-
-var state = HeroState.stand
-var state_prev = state
-
 var velocity = Vector3()
 var velocity_prev = velocity
 var velocity_offset = velocity
-
-var jumps = 0
-var input_jump = false
-var input_velocity = Vector3()
-
-var direction = HeroDirection.right
-var orientation = HeroOrientation.horizontal
 
 var on_wall = false
 var on_floor = false
@@ -54,8 +62,11 @@ var _on_ceiling_threshold = 0
 var floor_angle = 0
 var floor_velocity = Vector3()
 
+# Nodes
+
 onready var timer = $Timer
 onready var sprite = $HeroSprite
+onready var flashlight = $HeroSprite/Flashlight
 onready var health_hud = $HudViewport/HealthHud
 onready var every_timer = $EveryTimer
 onready var walk_particles = $WalkParticles
@@ -73,6 +84,7 @@ func _process(delta):
 	var right = 1 if Input.is_action_pressed("player_right") else 0
 	input_jump = Input.is_action_just_pressed("player_jump")
 	input_velocity = Vector3(right - left, input_velocity.y, down - up)
+	input_flashlight = Input.is_action_just_pressed("player_flashlight")
 
 # process_velocity updates position after velocity is applied.
 # @impure
@@ -179,13 +191,35 @@ func change_orientation(new_orientation):
 # @impure
 # @param(string) animation
 func change_animation(animation):
-	animation_player.play(animation + " Flashlight" if animation_player.get_animation(animation + " Flashlight") != null else animation)
+	current_animation = animation
+	if flashlight_on and animation_player.get_animation(animation + " Flashlight") != null:
+		animation_player.play(animation + " Flashlight")
+	else:
+		animation_player.play(animation)
 
 # change_animation_speed changes the sprite animation speed.
 # @impure
 # @param(float) speed
 func change_animation_speed(speed):
 	animation_player.playback_speed = speed
+
+## Flashlight
+
+# handle_flashlight handles flashlight input
+# @impure
+func handle_flashlight():
+	if input_flashlight:
+		input_flashlight = false
+		change_flashlight(!flashlight_on)
+
+# change_flashlight changes the flashlight switch status
+# @impure
+# @param(boolean) new_flashlight_on
+func change_flashlight(new_flashlight_on):
+	print(new_flashlight_on)
+	flashlight_on = new_flashlight_on
+	flashlight.visible = flashlight_on
+	change_animation(current_animation)
 
 ## Audio
 ## ---

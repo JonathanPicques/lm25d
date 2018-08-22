@@ -70,6 +70,7 @@ func pre_stand():
 
 func stand(delta):
 	handle_gravity(delta, GRAVITY_SPD, GRAVITY_ACC)
+	handle_flashlight()
 	if not on_floor:
 		return set_state(HeroState.fall)
 	elif input_jump and jumps > 0:
@@ -91,6 +92,7 @@ func pre_walk():
 
 func walk(delta):
 	handle_gravity(delta, GRAVITY_SPD, GRAVITY_ACC)
+	handle_flashlight()
 	handle_directional_move(delta, FLOOR_SPD, FLOOR_ACC, FLOOR_DEC)
 	if every_seconds(0.08, "walk"):
 		play_sound_effect(step_sound)
@@ -106,6 +108,7 @@ func pre_walk_2():
 
 func walk_2(delta):
 	handle_gravity(delta, GRAVITY_SPD, GRAVITY_ACC)
+	handle_flashlight()
 	handle_directional_move(delta, FLOOR_SPD, FLOOR_ACC, FLOOR_DEC)
 	if every_seconds(0.24, "walk"):
 		play_sound_effect(step_sound)
@@ -137,6 +140,7 @@ func pre_walk_skid():
 
 func walk_skid(delta):
 	handle_gravity(delta, GRAVITY_SPD, GRAVITY_ACC)
+	handle_flashlight()
 	handle_deceleration_move(delta, FLOOR_DEC if not has_forward_input_invert_direction() else FLOOR_ACC + FLOOR_DEC)
 	if not on_floor:
 		return set_state(HeroState.fall)
@@ -156,6 +160,7 @@ func pre_walk_turn():
 
 func walk_turn(delta):
 	handle_gravity(delta, GRAVITY_SPD, GRAVITY_ACC)
+	handle_flashlight()
 	handle_deceleration_move(delta, FLOOR_ACC + FLOOR_DEC)
 	if is_timer_finished():
 		change_direction(-direction)
@@ -174,6 +179,7 @@ func jump(delta):
 	if velocity.y < 0:
 		set_state(HeroState.fall)
 	handle_gravity(delta, GRAVITY_SPD, GRAVITY_ACC)
+	handle_flashlight()
 	handle_airborne_move(delta, AIRBORNE_SPD, AIRBORNE_ACC, AIRBORNE_DEC)
 
 func pre_fall():
@@ -181,6 +187,7 @@ func pre_fall():
 
 func fall(delta):
 	handle_gravity(delta, GRAVITY_SPD, GRAVITY_ACC)
+	handle_flashlight()
 	handle_airborne_move(delta, AIRBORNE_SPD, AIRBORNE_ACC, AIRBORNE_DEC)
 	if on_floor:
 		return set_state(HeroState.fall_to_stand)
@@ -193,6 +200,7 @@ func pre_fall_to_stand():
 
 func fall_to_stand(delta):
 	handle_gravity(delta, GRAVITY_SPD, GRAVITY_ACC)
+	handle_flashlight()
 	handle_deceleration_move(delta, FLOOR_DEC)
 	if is_timer_finished():
 		return self.set_state(HeroState.stand if velocity == Vector3() else HeroState.walk_skid)
